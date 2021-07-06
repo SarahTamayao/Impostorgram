@@ -27,6 +27,9 @@
      
 }
 
+- (IBAction)didTapCompose:(id)sender {
+    [self performSegueWithIdentifier:@"composeSegue" sender:self];
+}
 
 //allows user to log out
 -(void)didLogOut {
