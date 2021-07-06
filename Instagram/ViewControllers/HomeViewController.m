@@ -6,6 +6,9 @@
 //
 
 #import "HomeViewController.h"
+#import <Parse/Parse.h>
+#import "AppDelegate.h"
+#import "LoginViewController.h"
 
 @interface HomeViewController ()
 
@@ -16,6 +19,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+- (IBAction)didTapLogOut:(id)sender {
+   // [self didLogOut];
+     
+
+     
+}
+
+
+//allows user to log out
+-(void)didLogOut {
+    AppDelegate *appDelegate = (AppDelegate *)[UIApplication sharedApplication].delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
+    appDelegate.window.rootViewController = loginViewController;
+
+
 }
 
 /*
