@@ -28,14 +28,10 @@
         
         self.window.rootViewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeNavigationController"];
     }
-
-    
     
     
 
-    
-   //return YES; 
-    
+
 }
 
 
