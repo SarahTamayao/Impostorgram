@@ -16,6 +16,11 @@
 @end
 
 @implementation ComposeViewController
+- (IBAction)didTapPost:(id)sender {
+    [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+} 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -63,7 +68,10 @@
 
     // Do something with the images (based on your use case)
    // Post *newPost = [[Post alloc] init];
-    [Post postUserImage:finalImage withCaption: self.captionTextField.text withCompletion:nil];
+
+    
+    self.imageView.image = finalImage;
+    [self.imageView reloadInputViews];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
