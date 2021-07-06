@@ -39,8 +39,8 @@
         } else {
             NSLog(@"User logged out successfully");
     
-        } 
-    }];
+        }
+    }]; 
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
