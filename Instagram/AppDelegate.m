@@ -6,7 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "Parse/Parse.h" 
+#import "Parse/Parse.h"
 
 @interface AppDelegate ()
 
@@ -18,12 +18,26 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     ParseClientConfiguration *config = [ParseClientConfiguration  configurationWithBlock:^(id<ParseMutableClientConfiguration> configuration) {
 
-        configuration.applicationId = @"YOUR_APP_ID"; // <- UPDATE
-        configuration.clientKey = @"YOUR_CLIENT_KEY"; // <- UPDATE
+        configuration.applicationId = @"UkTfoeiLiYheO9EMtqSkE9keZCK40g5kOXdSV2Ek"; 
+        configuration.clientKey = @"0QybgCOj1lhdIPMxgrg1Z90lWB3np7neamDkhy45";
         configuration.server = @"https://parseapi.back4app.com";
     }];
 
     [Parse initializeWithConfiguration:config];
+    
+    
+    //populates data on parse
+    PFObject *gameScore = [PFObject objectWithClassName:@"GameScore"];
+    gameScore[@"score"] = @1337;
+    gameScore[@"playerName"] = @"Sean Plott";
+    gameScore[@"cheatMode"] = @NO;
+    [gameScore saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+     if (succeeded) {
+            NSLog(@"Object saved!");
+     } else {
+            NSLog(@"Error: %@", error.description);
+     }
+    }];
 
     return YES;
 
