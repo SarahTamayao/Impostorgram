@@ -7,6 +7,7 @@
 
 #import "ComposeViewController.h"
 #import <UIKit/UIKit.h>
+#import "Post.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
@@ -49,7 +50,7 @@
     }
 
     [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
+      
  }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
@@ -57,12 +58,32 @@
     // Get the image captured by the UIImagePickerController
     UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+     
+    UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
 
     // Do something with the images (based on your use case)
+   // Post *newPost = [[Post alloc] init];
+    [Post postUserImage:finalImage withCaption: self.captionTextField.text withCompletion:nil];
     
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
 }
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+
 
 /*
 #pragma mark - Navigation
