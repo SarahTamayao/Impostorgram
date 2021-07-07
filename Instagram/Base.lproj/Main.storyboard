@@ -122,9 +122,9 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSB-oI-C23">
-                                                    <rect key="frame" x="6" y="502" width="39" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSB-oI-C23">
+                                                    <rect key="frame" x="6" y="502" width="376" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -142,7 +142,7 @@
                                                 <constraint firstItem="j6v-Qd-6kM" firstAttribute="top" secondItem="ULn-sL-dNu" secondAttribute="topMargin" constant="8" id="aq5-yQ-qRL"/>
                                                 <constraint firstAttribute="trailing" secondItem="o5U-8w-M91" secondAttribute="trailing" id="dGV-Cz-C2G"/>
                                                 <constraint firstItem="o5U-8w-M91" firstAttribute="top" secondItem="MU2-0x-r2X" secondAttribute="bottom" constant="8" id="dKh-Kt-AA9"/>
-                                                <constraint firstAttribute="trailing" secondItem="BSB-oI-C23" secondAttribute="trailing" constant="345" id="li2-ED-Y5I"/>
+                                                <constraint firstAttribute="trailing" secondItem="BSB-oI-C23" secondAttribute="trailing" constant="8" id="li2-ED-Y5I"/>
                                                 <constraint firstItem="qI2-3o-NJe" firstAttribute="leading" secondItem="jDA-hT-lEU" secondAttribute="trailing" constant="12" id="n8U-75-VbQ"/>
                                                 <constraint firstItem="jDA-hT-lEU" firstAttribute="leading" secondItem="BSB-oI-C23" secondAttribute="leading" id="p34-zg-SRR"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="j6v-Qd-6kM" secondAttribute="trailing" constant="8" id="pKR-on-L7f"/>
