@@ -49,21 +49,30 @@
 //to make timelineviewcontroller generic so it can be reused
 - (void)getData {
     
-        // construct query
-        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-       [query whereKey:@"likesCount" greaterThanOrEqualTo:@0];
-        query.limit = 20;
+//        // construct query
+//        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+//       //[query whereKey:@"likesCount" greaterThanOrEqualTo:@0];
+//        query.limit = 20;
+//
+    
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
 
-        // fetch data asynchronously
-        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
-            if (posts != nil) {
-                NSMutableArray* postsMutableArray = [posts mutableCopy];
-                self.arrayOfPosts = postsMutableArray;
-                [self.tableView reloadData];
-            } else {
-                NSLog(@"%@", error.localizedDescription);
-            }
-        }];
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            NSMutableArray* postsMutableArray = [posts mutableCopy];
+            self.arrayOfPosts = postsMutableArray;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", @"CANNOT GET STUFF");
+        }
+    }]; 
 }
 
 
@@ -91,8 +100,8 @@
     
     cell.captionLabel.text = post.caption;
     
-    cell.imageView.image = post.image;
- 
+    cell.postImageView = post.image;
+  
     return cell;
 }
 

@@ -7,11 +7,18 @@
 
 #import "ComposeViewController.h"
 #import <UIKit/UIKit.h>
+#import "PostCell.h"
+#import <UIKit/UIKit.h>
 #import "Post.h"
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h>
+#import <Parse/Parse.h>
+#import <Parse/PFImageView.h> 
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet PFImageView *imageView;
+
 
 @end
 
@@ -28,7 +35,7 @@
     [super viewDidLoad];
     
     self.imageView.userInteractionEnabled = YES;
-
+ 
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
 
     tapGesture1.numberOfTapsRequired = 1;

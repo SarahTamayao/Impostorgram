@@ -6,14 +6,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Post.h" 
+#import "Post.h"
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h>
+#import <Parse/Parse.h>
+#import <Parse/PFImageView.h> 
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PostCell : UITableViewCell
-@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
+
+
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+@property (weak, nonatomic) IBOutlet PFImageView *postImageView;
+
+
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UILabel *smallUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;

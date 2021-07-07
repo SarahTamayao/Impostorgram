@@ -11,6 +11,7 @@ target 'Instagram' do
     pod 'BDBOAuth1Manager'
     pod 'DateTools'
     pod 'Mantle'
+    pod 'Parse/UI'
 
   target 'InstagramTests' do
     inherit! :search_paths
