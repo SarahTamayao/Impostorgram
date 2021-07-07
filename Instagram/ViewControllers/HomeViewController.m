@@ -103,7 +103,7 @@
     
     cell.captionLabel.text = post.caption;
     
-    cell.postImageView.file = post.image; 
+    cell.postImageView.file = post.image;
   
     return cell;
 }
