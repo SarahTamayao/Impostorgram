@@ -137,6 +137,9 @@
                                                     </constraints>
                                                     <state key="normal" image="iconmonstr-heart-thin-240"/>
                                                     <state key="selected" image="iconmonstr-favorite-3-240"/>
+                                                    <connections>
+                                                        <action selector="didTapFavorite:" destination="WWh-nA-0cF" eventType="touchUpInside" id="3qm-8Y-8Xa"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -167,6 +170,7 @@
                                         <connections>
                                             <outlet property="captionLabel" destination="qI2-3o-NJe" id="NZr-mO-fT2"/>
                                             <outlet property="dateLabel" destination="BSB-oI-C23" id="S5t-te-yOl"/>
+                                            <outlet property="favoriteButton" destination="T7z-En-lv8" id="JiA-Z1-Ycw"/>
                                             <outlet property="postImageView" destination="o5U-8w-M91" id="E4B-cO-2Je"/>
                                             <outlet property="profileImage" destination="MU2-0x-r2X" id="G1C-05-WeQ"/>
                                             <outlet property="smallUsernameLabel" destination="jDA-hT-lEU" id="Guh-r1-d3y"/>

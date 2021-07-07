@@ -30,6 +30,7 @@
     
     //get the data to display and store it in local variable
     [self getData];   
+
     
     // Initialize a UIRefreshControl
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
@@ -41,7 +42,7 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
-    //get rid of horizontal line separator 
+    //get rid of horizontal line separator
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
@@ -127,6 +128,10 @@
     cell.captionLabel.text = post.caption;
     
     cell.postImageView.file = post.image;
+    
+    
+    //TODO: test
+    
   
     return cell;
 }
