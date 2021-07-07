@@ -13,6 +13,9 @@
 #import "Post.h"
 #import "PostCell.h"
 #import "ComposeViewController.h"
+#import <Parse/ParseUIConstants.h>
+#import <Parse/PFInstallation.h>
+#import <Parse/PFImageView.h>
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -80,7 +83,7 @@
 
 //set how many rows in timeline display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 20;
+    return [self.arrayOfPosts count]; 
 }
 
 //enables custom cell displays
@@ -100,7 +103,7 @@
     
     cell.captionLabel.text = post.caption;
     
-    cell.postImageView = post.image;
+    cell.postImageView.file = post.image; 
   
     return cell;
 }
