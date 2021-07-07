@@ -41,6 +41,9 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    //get rid of horizontal line separator 
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
      
 //    //set cell height to automatic
@@ -94,7 +97,7 @@
             NSLog(@"%@", error.localizedDescription);
             NSLog(@"%@", @"CANNOT GET STUFF");
         }
-    }];  
+    }];
     
     [self.tableView reloadData];
   
