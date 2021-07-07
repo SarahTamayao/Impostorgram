@@ -33,7 +33,7 @@
       
         [self refreshDataFavoriteUnfavorite];
         
-    } 
+    }
     
 }
 
