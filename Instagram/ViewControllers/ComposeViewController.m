@@ -23,6 +23,13 @@
 @end
 
 @implementation ComposeViewController
+- (IBAction)didTapCancel:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil]; 
+    
+}
+
+
 - (IBAction)didTapPost:(id)sender {
     [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
     
@@ -38,7 +45,7 @@
  
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
 
-    tapGesture1.numberOfTapsRequired = 1;
+    tapGesture1.numberOfTapsRequired = 1; 
 
     tapGesture1.delegate = self;
 

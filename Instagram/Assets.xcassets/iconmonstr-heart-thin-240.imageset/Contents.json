@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "iconmonstr-heart-thin-240.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "iconmonstr-heart-thin-241.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "iconmonstr-heart-thin-242.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
