@@ -15,27 +15,28 @@
   
 
 @implementation PostCell
+
 - (IBAction)didTapFavorite:(id)sender {
-    //favorite
+    //favorite 
     if(self.favoriteButton.selected ==NO) {
         NSNumber *likes = self.post.likeCount;
         likes = [NSNumber numberWithInt:likes.intValue + 1];
         self.post.likeCount = likes;
-        
+
         [self refreshDataFavorite];
-   
-      
+
+
     //unfavorite
     } else if (self.favoriteButton.selected ==YES) {
         NSNumber *likes = self.post.likeCount;
         likes = [NSNumber numberWithInt:likes.intValue - 1];
         self.post.likeCount = likes;
-      
+
         [self refreshDataFavoriteUnfavorite];
-        
+
     }
-    
 }
+
 
 //reloads cell view
 -(void) refreshDataFavorite {
@@ -43,7 +44,7 @@
 //    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
     self.favoriteButton.selected = YES;
      
-}
+} 
 
 //reloads cell view
 -(void) refreshDataFavoriteUnfavorite {

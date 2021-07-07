@@ -138,7 +138,7 @@
                                                     <state key="normal" image="iconmonstr-heart-thin-240"/>
                                                     <state key="selected" image="iconmonstr-favorite-3-240"/>
                                                     <connections>
-                                                        <action selector="didTapFavorite:" destination="WWh-nA-0cF" eventType="touchUpInside" id="3qm-8Y-8Xa"/>
+                                                        <action selector="didTapFavorite:" destination="WWh-nA-0cF" eventType="touchUpInside" id="K1n-bY-XI5"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -272,9 +272,6 @@
                                 </constraints>
                                 <state key="normal" image="iconmonstr-heart-thin-240"/>
                                 <state key="selected" image="iconmonstr-favorite-3-240"/>
-                                <connections>
-                                    <action selector="didTapFavorite:" destination="WWh-nA-0cF" eventType="touchUpInside" id="4Hv-e1-2Ws"/>
-                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygd-rI-ICB"/>
