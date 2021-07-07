@@ -41,23 +41,20 @@
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
+     
 //    //set cell height to automatic
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
 //    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
     
 
     
+    
 }
 
-//to make timelineviewcontroller generic so it can be reused
+
 - (void)getData {
-    
-//        // construct query
-//        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-//       //[query whereKey:@"likesCount" greaterThanOrEqualTo:@0];
-//        query.limit = 20;
-//
-    
+
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
@@ -79,6 +76,29 @@
 }
 
 
+- (void)refresh {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery includeKey:@"author"];
+    postQuery.limit = 20;
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts) {
+            NSMutableArray* postsMutableArray = [posts mutableCopy];
+            self.arrayOfPosts = postsMutableArray;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+            NSLog(@"%@", @"CANNOT GET STUFF");
+        }
+    }];  
+    
+    [self.tableView reloadData];
+  
+}
 
 
 //set how many rows in timeline display
@@ -118,6 +138,7 @@
     // Parse query
     
     // Reload the tableView now that there is new data
+    [self getData];
     [self.tableView reloadData];
 
     // Tell the refreshControl to stop spinning
@@ -164,8 +185,10 @@
 //when user clicks on Tweet after composing a tweet.
 //adds the new tweet onto the tweet array (displays at the top of timeline)
 - (void)didPost {
+    // Reload the tableView now that there is new data
     [self getData];
     [self.tableView reloadData];
+
 }
 
 
