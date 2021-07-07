@@ -19,6 +19,8 @@
 - (IBAction)didTapPost:(id)sender {
     [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
     
+    [self.delegate didPost];  
+    
     [self dismissViewControllerAnimated:YES completion:nil];
 } 
 

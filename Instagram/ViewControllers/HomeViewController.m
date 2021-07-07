@@ -10,8 +10,13 @@
 #import "AppDelegate.h"
 #import "LoginViewController.h"
 #import "SceneDelegate.h"
+#import "Post.h"
+#import "PostCell.h"
+#import "ComposeViewController.h"
 
-@interface HomeViewController ()
+@interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
 @end
 
@@ -19,8 +24,102 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    //get the data to display and store it in local variable
+    [self getData];   
+    
+    // Initialize a UIRefreshControl
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:refreshControl atIndex:0];
+    
+    
+    //table view delegate
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
+    
+//    //set cell height to automatic
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
+    
+
+    
 }
+
+//to make timelineviewcontroller generic so it can be reused
+- (void)getData {
+    
+        // construct query
+        PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+       [query whereKey:@"likesCount" greaterThanOrEqualTo:@0];
+        query.limit = 20;
+
+        // fetch data asynchronously
+        [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError *error) {
+            if (posts != nil) {
+                NSMutableArray* postsMutableArray = [posts mutableCopy];
+                self.arrayOfPosts = postsMutableArray;
+                [self.tableView reloadData];
+            } else {
+                NSLog(@"%@", error.localizedDescription);
+            }
+        }];
+}
+
+
+
+
+//set how many rows in timeline display
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+//enables custom cell displays
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
+    
+    Post *post = self.arrayOfPosts[indexPath.row];
+    PostCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    cell.post = post;
+   
+    
+    cell.profileImage.layer.cornerRadius = 20;
+    cell.profileImage.clipsToBounds = YES;
+     
+    cell.usernameLabel.text = post.author.username;
+    
+    cell.smallUsernameLabel.text =post.author.username;
+    
+    cell.captionLabel.text = post.caption;
+    
+    cell.imageView.image = post.image;
+ 
+    return cell;
+}
+
+
+
+// Makes a network request to get updated data
+ // Updates the tableView with the new data
+ // Hides the RefreshControl
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+
+    // Parse query
+    
+    // Reload the tableView now that there is new data
+    [self.tableView reloadData];
+
+    // Tell the refreshControl to stop spinning
+    [refreshControl endRefreshing];
+
+}
+
+
+
+
+
+
+
+
 - (IBAction)didTapLogOut:(id)sender {
    [self didLogOut];
 
@@ -40,7 +139,7 @@
             NSLog(@"User logged out successfully");
     
         }
-    }]; 
+    }];
     SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
     
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
@@ -50,14 +149,28 @@
 
 }
 
-/*
+//when user clicks on Tweet after composing a tweet.
+//adds the new tweet onto the tweet array (displays at the top of timeline)
+- (void)didPost {
+    [self getData];
+    [self.tableView reloadData];
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+
+    //if the user clicks on compose icon
+    if ([[segue identifier] isEqualToString:@"composeSegue"]) {
+        UINavigationController *navigationController = [segue destinationViewController];
+            ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+            composeController.delegate = self;
+    }
 }
-*/
+
 
 @end
