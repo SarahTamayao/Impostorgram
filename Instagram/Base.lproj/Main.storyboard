@@ -58,12 +58,12 @@
                     <connections>
                         <outlet property="passwordTextField" destination="yx8-3A-uij" id="xQU-oZ-f7T"/>
                         <outlet property="usernameTextField" destination="7yB-sG-aRC" id="bh5-oH-Pre"/>
-                        <segue destination="BoK-a2-TNj" kind="presentation" identifier="loginSegue" id="yxQ-Ou-lFO"/>
+                        <segue destination="I0w-dx-yDc" kind="presentation" identifier="toTabBarSegue" id="hX3-Al-Bnk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="69.230769230769226" y="74.644549763033169"/>
+            <point key="canvasLocation" x="-162" y="110"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="hfj-RB-1Xu">
@@ -221,7 +221,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZC-7l-bYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1755.3846153846152" y="77.488151658767762"/>
+            <point key="canvasLocation" x="2684.6153846153843" y="77.488151658767762"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="j9K-zN-unH">
+            <objects>
+                <viewController id="aud-Cp-DwY" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXb-yJ-uxD">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="eB2-fx-Ulf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QAb-zX-yGl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FPl-Ug-loI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1943.0769230769231" y="1149.5260663507108"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="aCD-lT-2vF">
@@ -329,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxA-ET-fCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1753.8461538461538" y="814.69194312796208"/>
+            <point key="canvasLocation" x="3612.3076923076924" y="814.69194312796208"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="4QF-kM-Ow5">
@@ -372,12 +388,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JTS-5I-4qk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3516.9230769230767" y="76.777251184834114"/>
+            <point key="canvasLocation" x="4446.1538461538457" y="76.777251184834114"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Home-->
         <scene sceneID="rg3-sK-cKY">
             <objects>
                 <navigationController storyboardIdentifier="HomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="BoK-a2-TNj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="feed_tab" id="478-vL-ybs"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Jme-6G-pBn"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXw-ZE-HLq">
@@ -396,7 +413,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lDw-qj-Yr2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="826.15384615384608" y="77.488151658767762"/>
+            <point key="canvasLocation" x="1755.3846153846152" y="77.488151658767762"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mpj-0n-aS7">
@@ -414,10 +431,49 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l3g-nh-RL9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2587.6923076923076" y="76.777251184834114"/>
+            <point key="canvasLocation" x="3516.9230769230767" y="76.777251184834114"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="XEa-g2-t7I">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zvk-Ts-QJx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="profile_tab" id="sAh-hq-3IB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8zF-he-8A0">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="aud-Cp-DwY" kind="relationship" relationship="rootViewController" id="RHT-ME-sLD"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mMm-c2-Mzv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1103.0769230769231" y="1149.5260663507108"/>
+        </scene>
+        <!--Tab Bar-->
+        <scene sceneID="TiR-Ln-zze">
+            <objects>
+                <tabBarController storyboardIdentifier="tabBarController" title="Tab Bar" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="I0w-dx-yDc" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vwq-Qb-Urc">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" red="0.066665247080000004" green="0.066665954890000004" blue="0.066667683419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BoK-a2-TNj" kind="relationship" relationship="viewControllers" id="y9P-aa-BzC"/>
+                        <segue destination="zvk-Ts-QJx" kind="relationship" relationship="viewControllers" id="p1S-6B-pOi"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FVA-Fj-fYw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-55" y="950"/>
         </scene>
     </scenes>
     <resources>
+        <image name="feed_tab" width="25" height="25"/>
         <image name="iconmonstr-favorite-1-240" width="80" height="80"/>
         <image name="iconmonstr-favorite-3-240" width="80" height="80"/>
         <image name="iconmonstr-heart-thin-240" width="80" height="80"/>
@@ -425,6 +481,7 @@
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta" width="311.33334350585938" height="105.33333587646484"/>
         <image name="profile pic instagram" width="236" height="236"/>
+        <image name="profile_tab" width="25" height="25"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

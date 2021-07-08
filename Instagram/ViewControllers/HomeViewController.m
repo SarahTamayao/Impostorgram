@@ -42,7 +42,7 @@
     [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
     [self.tableView insertSubview:refreshControl atIndex:0];
     [refreshControl setTintColor:[UIColor lightGrayColor]];
-    
+     
     
     //table view delegate
     self.tableView.dataSource = self;
@@ -51,7 +51,7 @@
     //get rid of horizontal line separator
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
-    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
+  //  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
 
 }
 
