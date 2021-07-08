@@ -193,11 +193,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="Instagram" id="724-X6-a2H">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="d1L-62-DSC">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapLogOut:" destination="1i8-bJ-uKu" id="fPz-Zf-TY3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="insta_camera_btn" id="386-O9-AEv">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="iconmonstr-instagram-11-72" id="386-O9-AEv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapCompose:" destination="1i8-bJ-uKu" id="PEa-HS-MmD"/>
                             </connections>
@@ -372,6 +374,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fXw-ZE-HLq">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -405,8 +412,8 @@
         <image name="iconmonstr-favorite-1-240" width="80" height="80"/>
         <image name="iconmonstr-favorite-3-240" width="80" height="80"/>
         <image name="iconmonstr-heart-thin-240" width="80" height="80"/>
+        <image name="iconmonstr-instagram-11-72" width="24" height="24"/>
         <image name="image_placeholder" width="375" height="375"/>
-        <image name="insta_camera_btn" width="25" height="25"/>
         <image name="profile pic instagram" width="236" height="236"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
