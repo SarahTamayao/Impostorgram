@@ -21,11 +21,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
-    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
-    backgroundImageView.image=backgroundImage;
-    [self.view insertSubview:backgroundImageView atIndex:0];
-    
+//    UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
+//    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+//    backgroundImageView.image=backgroundImage;
+//    [self.view insertSubview:backgroundImageView atIndex:0]; 
+//
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                 initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
