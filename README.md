@@ -22,7 +22,7 @@ The following **optional** features are implemented:
 - [x] Run your app on your phone and use the camera to take the photo
 - [x] User can load more posts once he or she reaches the bottom of the feed using infinite scrolling.
 - [x] Show the username and creation time for each post
-- [ ] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
+- [x] User can use a Tab Bar to switch between a Home Feed tab (all posts) and a Profile tab (only posts published by the current user)
 - User Profiles:
   - [ ] Allow the logged in user to add a profile photo
   - [ ] Display the profile photo with each post
@@ -30,16 +30,17 @@ The following **optional** features are implemented:
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
 - [ ] User can like a post and see number of likes for each post in the post details screen.
-- [ ] Style the login page to look like the real Instagram login page.
+- [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
 - [ ] Implement a custom camera view.
 
 The following **additional** features are implemented:
 
-- [x] Rounded out the corners of user's profile pictures. 
 - [x] Added like and unlike options on both home feed and details view. 
 - [x] Implemented dark mode. 
+- [x] Rounded out the corners of user's profile pictures. 
 - [x] Right after user posts an image, the home feed will display the newest post automatically. 
+- [x] Shows user alert when trying to log in with invalid credentials. 
 - [x] Implemented double tap gesture for liking images. 
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
