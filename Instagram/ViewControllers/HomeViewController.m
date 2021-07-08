@@ -16,6 +16,8 @@
 #import <Parse/ParseUIConstants.h>
 #import <Parse/PFInstallation.h>
 #import <Parse/PFImageView.h>
+#import "NSDate+DateTools.h"
+#import "DetailsViewController.h"
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -85,7 +87,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
+    postQuery.limit = 20; 
 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -129,10 +131,9 @@
     
     cell.postImageView.file = post.image;
     
-    
-    //TODO: test
-    
-  
+    cell.dateLabel.text = post.createdAt.timeAgoSinceNow;
+        
+
     return cell;
 }
 
@@ -212,6 +213,18 @@
         UINavigationController *navigationController = [segue destinationViewController];
             ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
             composeController.delegate = self;
+    } else if ([[segue identifier] isEqualToString:@"detailsSegue"]){
+        //post details segue
+         
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        
+        Post *post = self.arrayOfPosts[indexPath.row];
+        
+        DetailsViewController *detailsViewController = [segue destinationViewController];
+        
+        detailsViewController.post = post;
+        
     }
 }
 
