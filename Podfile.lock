@@ -27,6 +27,7 @@ PODS:
     - Bolts/Tasks (= 1.9.1)
   - Parse/UI (1.19.2):
     - Parse/Core
+  - SVPullToRefresh (0.4.1)
 
 DEPENDENCIES:
   - AFNetworking
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - Mantle
   - Parse
   - Parse/UI
+  - SVPullToRefresh
 
 SPEC REPOS:
   trunk:
@@ -44,6 +46,7 @@ SPEC REPOS:
     - DateTools
     - Mantle
     - Parse
+    - SVPullToRefresh
 
 SPEC CHECKSUMS:
   AFNetworking: a0075feb321559dc78d9d85b55d11caa19eabb93
@@ -52,7 +55,8 @@ SPEC CHECKSUMS:
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
   Mantle: 4c0ed6ce47c96eccc4dc3bb071deb3def0e2c3be
   Parse: 081fb8755c3000fd11df817eec235def233d0af3
+  SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
 
-PODFILE CHECKSUM: 81da269a8d613af6d17bedbad9d4e59788eb89a8
+PODFILE CHECKSUM: 36024d9742697511029069000ca5c2c0dcb33834
 
 COCOAPODS: 1.10.1

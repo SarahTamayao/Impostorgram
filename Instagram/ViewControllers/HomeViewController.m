@@ -18,11 +18,14 @@
 #import <Parse/PFImageView.h>
 #import "NSDate+DateTools.h"
 #import "DetailsViewController.h"
+#import "UIScrollView+SVInfiniteScrolling.h"
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
+@property (assign, nonatomic) BOOL dataDoneLoading;
+ 
 @end
 
 @implementation HomeViewController
@@ -31,7 +34,7 @@
     [super viewDidLoad];
     
     //get the data to display and store it in local variable
-    [self getData];   
+    [self getData:20];
 
     
     // Initialize a UIRefreshControl
@@ -49,25 +52,22 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
     [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
-     
-//    //set cell height to automatic
-//    self.tableView.rowHeight = UITableViewAutomaticDimension;
-//    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
-    
-   // [self.navigationItem.leftBarButtonItem setTitlePositionAdjustment:UIOffsetMake(-10, -10)
-                                                        //forBarMetrics:UIBarMetricsD//efault];
-    
-    
+
 }
 
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if( !self.dataDoneLoading && indexPath.row + 1 == [self.arrayOfPosts count]){
+        [self getData:(int)[self.arrayOfPosts count] + 20];
+    }
+}
 
-- (void)getData {
-
+- (void)getData: (int) postLimit {
+ 
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
+    postQuery.limit = postLimit;
 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -89,8 +89,8 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
-    postQuery.limit = 20;
-
+    postQuery.limit = self.arrayOfPosts.count;
+ 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         if (posts) {
@@ -149,9 +149,13 @@
     // Parse query
     
     // Reload the tableView now that there is new data
-    [self getData];
+    if(self.arrayOfPosts.count < 20) {
+        [self getData: (int) 20];
+    } else if(self.arrayOfPosts.count >= 20) {
+        [self getData: (int) self.arrayOfPosts.count];
+    }
     [self.tableView reloadData];
-
+ 
     // Tell the refreshControl to stop spinning
     [refreshControl endRefreshing];
 
@@ -197,7 +201,7 @@
 //adds the new tweet onto the tweet array (displays at the top of timeline)
 - (void)didPost {
     // Reload the tableView now that there is new data
-    [self getData];
+    [self getData:(int) self.arrayOfPosts.count];
     [self.tableView reloadData];
 
 }
