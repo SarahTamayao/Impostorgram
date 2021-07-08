@@ -24,9 +24,20 @@
     UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
     UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
     backgroundImageView.image=backgroundImage;
-    [self.view insertSubview:backgroundImageView atIndex:0];    
+    [self.view insertSubview:backgroundImageView atIndex:0];
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
+                initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
+     
+    
 }
 
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
+}
 
 - (IBAction)didTapSignUp:(id)sender {
     if([self.usernameTextField.text isEqual:@""]) {
