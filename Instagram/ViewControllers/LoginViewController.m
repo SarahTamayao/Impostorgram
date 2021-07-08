@@ -34,7 +34,7 @@
 
     [self.logInButton.layer setBorderWidth:1.0];
     [self.logInButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
-    [self.logInButton.layer setCornerRadius:5.0]; 
+    [self.logInButton.layer setCornerRadius:5.0];
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
@@ -108,6 +108,8 @@
     [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser * user, NSError *  error) {
         if (error != nil) {
             NSLog(@"User log in failed: %@", error.localizedDescription);
+            [self showAlertAction:@"Invalid username/password."]; 
+            
         } else {
             NSLog(@"User logged in successfully");
         
