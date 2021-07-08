@@ -54,6 +54,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="yx8-3A-uij" id="xQU-oZ-f7T"/>
@@ -223,17 +224,25 @@
             </objects>
             <point key="canvasLocation" x="2165" y="-339"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="j9K-zN-unH">
             <objects>
-                <viewController id="aud-Cp-DwY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="dXb-yJ-uxD">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="761"/>
+                <viewController id="aud-Cp-DwY" customClass="ProfileViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dXb-yJ-uxD" customClass="Profile">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="eB2-fx-Ulf"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.066665247080000004" green="0.066665954890000004" blue="0.066667683419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" red="0.066665247080000004" green="0.066665954890000004" blue="0.066667683419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QAb-zX-yGl"/>
+                    <navigationItem key="navigationItem" id="QAb-zX-yGl">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="78p-RZ-xYj">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="didTapLogOut:" destination="aud-Cp-DwY" id="dTd-QZ-hSV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPl-Ug-loI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,9 +448,10 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zvk-Ts-QJx" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="iconmonstr-instagram-11-72" selectedImage="iconmonstr-instagram-11-72" id="sAh-hq-3IB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8zF-he-8A0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8zF-he-8A0">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.066665247080000004" green="0.066665954890000004" blue="0.066667683419999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

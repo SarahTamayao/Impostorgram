@@ -165,38 +165,10 @@
 
 
 
-
-
-
-
-- (IBAction)didTapLogOut:(id)sender {
-   [self didLogOut];
-
-}
-
 - (IBAction)didTapCompose:(id)sender {
     [self performSegueWithIdentifier:@"composeSegue" sender:self];
-}
+} 
 
-//allows user to log out
--(void)didLogOut {
-    [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
-        // PFUser.current() will now be nil
-        if (error != nil) {
-            NSLog(@"User log out failed: %@", error.localizedDescription);
-        } else {
-            NSLog(@"User logged out successfully");
-    
-        }
-    }];
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    LoginViewController *loginViewController = [storyboard instantiateViewControllerWithIdentifier:@"LoginViewController"];
-    myDelegate.window.rootViewController = loginViewController;
-   
-
-}
 
 //when user clicks on Tweet after composing a tweet.
 //adds the new tweet onto the tweet array (displays at the top of timeline)
