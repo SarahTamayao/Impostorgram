@@ -272,6 +272,9 @@
                                 </constraints>
                                 <state key="normal" image="iconmonstr-heart-thin-240"/>
                                 <state key="selected" image="iconmonstr-favorite-3-240"/>
+                                <connections>
+                                    <action selector="didTapFavorite:" destination="OVm-qP-d2W" eventType="touchUpInside" id="37I-BN-dad"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygd-rI-ICB"/>
