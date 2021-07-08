@@ -11,6 +11,7 @@
 @interface LoginViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
+@property (weak, nonatomic) IBOutlet UIButton *logInButton;
 
 
 
@@ -24,14 +25,16 @@
 //    UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
 //    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
 //    backgroundImageView.image=backgroundImage;
-//    [self.view insertSubview:backgroundImageView atIndex:0]; 
+//    [self.view insertSubview:backgroundImageView atIndex:0];
 //
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                 initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
-     
-    
+
+    [self.logInButton.layer setBorderWidth:1.0];
+    [self.logInButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
+    [self.logInButton.layer setCornerRadius:5.0]; 
 }
 
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
