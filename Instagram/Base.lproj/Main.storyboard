@@ -175,6 +175,7 @@
                                             <outlet property="profileImage" destination="MU2-0x-r2X" id="G1C-05-WeQ"/>
                                             <outlet property="smallUsernameLabel" destination="jDA-hT-lEU" id="Guh-r1-d3y"/>
                                             <outlet property="usernameLabel" destination="j6v-Qd-6kM" id="Oy1-zu-Hxt"/>
+                                            <segue destination="OVm-qP-d2W" kind="show" identifier="detailsSegue" id="QSL-Pj-gJ7"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -205,7 +206,6 @@
                     <connections>
                         <outlet property="tableView" destination="zMk-s7-FK8" id="neD-RQ-Peu"/>
                         <segue destination="I7z-dR-aCz" kind="presentation" identifier="composeSegue" id="RnE-xs-J41"/>
-                        <segue destination="OVm-qP-d2W" kind="show" identifier="detailsSegue" id="e2A-73-cUQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZC-7l-bYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
