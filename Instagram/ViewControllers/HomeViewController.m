@@ -54,7 +54,8 @@
 //    self.tableView.rowHeight = UITableViewAutomaticDimension;
 //    self.tableView.estimatedRowHeight = UITableViewAutomaticDimension;
     
-
+   // [self.navigationItem.leftBarButtonItem setTitlePositionAdjustment:UIOffsetMake(-10, -10)
+                                                        //forBarMetrics:UIBarMetricsD//efault];
     
     
 }
