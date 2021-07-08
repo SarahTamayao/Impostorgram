@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *smallUsernameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *captionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dateLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *heartImage;
 
 
 @end
@@ -32,6 +33,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     Post *post = self.post;
+    
+    self.heartImage.alpha =0;
+    self.heartImage.hidden = NO;
+    
     
     //set custom details display
     self.profileImage.layer.cornerRadius = 20;
@@ -61,10 +66,26 @@
 
     [self.postImageView addGestureRecognizer:tapGesture1];
         
-} 
+}
 
 - (void) tapGesture: (id)sender
 {
+    [UIView animateWithDuration:3.00
+      delay: 1.0
+      options: 0
+      animations:^{
+       self.heartImage.alpha = 1.0;
+      }
+      completion: nil
+    ];
+    [UIView animateWithDuration:1.0
+      delay: 0.0
+      options: 0
+      animations:^{
+       self.heartImage.alpha = 0;
+      }
+      completion: nil
+    ];
     [self refreshDataFavorite];
  }
  

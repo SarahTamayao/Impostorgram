@@ -276,6 +276,10 @@
                                     <action selector="didTapFavorite:" destination="OVm-qP-d2W" eventType="touchUpInside" id="37I-BN-dad"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="iconmonstr-favorite-1-240" translatesAutoresizingMaskIntoConstraints="NO" id="lN0-Wv-MZl">
+                                <rect key="frame" x="152" y="307" width="86" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygd-rI-ICB"/>
                         <color key="backgroundColor" red="0.034873683010000003" green="0.038035076110000003" blue="0.037971064450000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -305,6 +309,7 @@
                         <outlet property="captionLabel" destination="hPO-4B-6qY" id="66s-E7-unU"/>
                         <outlet property="dateLabel" destination="v03-Ao-4MY" id="MZv-IZ-Wec"/>
                         <outlet property="favoriteButton" destination="NaK-62-h9s" id="Ov7-Gj-QcU"/>
+                        <outlet property="heartImage" destination="lN0-Wv-MZl" id="lOD-86-sap"/>
                         <outlet property="postImageView" destination="V5f-sy-Kfv" id="a72-b2-ejU"/>
                         <outlet property="profileImage" destination="gfG-kz-Hz8" id="WJF-pg-uft"/>
                         <outlet property="smallUsernameLabel" destination="Gpn-iP-Cts" id="UC3-SG-ua7"/>
@@ -397,6 +402,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="iconmonstr-favorite-1-240" width="240" height="240"/>
         <image name="iconmonstr-favorite-3-240" width="80" height="80"/>
         <image name="iconmonstr-heart-thin-240" width="80" height="80"/>
         <image name="image_placeholder" width="375" height="375"/>
