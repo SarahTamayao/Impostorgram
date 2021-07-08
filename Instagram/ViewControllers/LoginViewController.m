@@ -21,8 +21,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"background ig"]]]; 
-    // Do any additional setup after loading the view.
+    UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
+    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
+    backgroundImageView.image=backgroundImage;
+    [self.view insertSubview:backgroundImageView atIndex:0];    
 }
 
 

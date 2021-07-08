@@ -206,8 +206,8 @@
             filePath = "Instagram/ViewControllers/LoginViewController.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "-loginUser"
             landmarkType = "7">
          </BreakpointContent>
