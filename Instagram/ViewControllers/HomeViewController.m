@@ -59,6 +59,7 @@
     if( !self.dataDoneLoading && indexPath.row + 1 == [self.arrayOfPosts count]){
         [self getData:(int)[self.arrayOfPosts count] + 20];
     }
+ 
 }
 
 - (void)getData: (int) postLimit {
