@@ -48,10 +48,26 @@
     
     self.postImageView.file = post.image;
     
-    self.dateLabel.text = post.createdAt.timeAgoSinceNow; 
-       
-}
+    self.dateLabel.text = post.createdAt.timeAgoSinceNow;
+    
+    //double tap action 
+    self.postImageView.userInteractionEnabled = YES;
+ 
+    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
 
+    tapGesture1.numberOfTapsRequired = 2;
+
+    tapGesture1.delegate = self;
+
+    [self.postImageView addGestureRecognizer:tapGesture1];
+        
+} 
+
+- (void) tapGesture: (id)sender
+{
+    [self refreshDataFavorite];
+ }
+ 
 - (IBAction)didTapFavorite:(id)sender {
       
     //favorite

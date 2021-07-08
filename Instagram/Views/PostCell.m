@@ -16,6 +16,13 @@
 
 @implementation PostCell
 
+
+
+
+
+
+
+
 - (IBAction)didTapFavorite:(id)sender {
     //favorite 
     if(self.favoriteButton.selected ==NO) {
@@ -44,7 +51,7 @@
 //    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
     self.favoriteButton.selected = YES;
      
-} 
+}
 
 //reloads cell view
 -(void) refreshDataFavoriteUnfavorite {
@@ -56,8 +63,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    
 }
+
 
 - (void)setPost:(Post *)post {
     _post = post;
