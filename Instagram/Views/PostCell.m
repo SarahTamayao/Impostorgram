@@ -44,7 +44,9 @@
    
 //    self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
     self.favoriteButton.selected = YES;
-     
+    
+    NSString* numString = [NSString stringWithFormat:@"%@", self.post.likeCount];
+    self.numLikesLabel.text = numString;
 }
 
 //reloads cell view
@@ -52,6 +54,8 @@
    
     //self.favoriteLabel.text = [NSString stringWithFormat:@"%d", self.tweet.favoriteCount];
     self.favoriteButton.selected = NO;
+    NSString* numString = [NSString stringWithFormat:@"%@", self.post.likeCount];
+    self.numLikesLabel.text = numString; 
      
 }
 

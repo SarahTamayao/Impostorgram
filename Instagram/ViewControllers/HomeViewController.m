@@ -153,8 +153,10 @@
     cell.postImageView.file = post.image;
     
     cell.dateLabel.text = post.createdAt.timeAgoSinceNow;
-        
-
+    
+    NSString* numString = [NSString stringWithFormat:@"%@", post.likeCount];
+    cell.numLikesLabel.text = numString;  
+          
     return cell;
 }
 
