@@ -125,7 +125,18 @@
     
     cell.profileImage.layer.cornerRadius = 20;
     cell.profileImage.clipsToBounds = YES;
-     
+    
+    PFUser *user = [PFUser currentUser];
+    if(user[@"image"]) {
+        PFFileObject *picFile =user[@"image"];
+        [picFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+            if(error==nil) {
+                cell.profileImage.image = [UIImage imageWithData:data];
+            }
+        }];
+    
+    } 
+      
     cell.usernameLabel.text = post.author.username;
     
     cell.smallUsernameLabel.text =post.author.username;
