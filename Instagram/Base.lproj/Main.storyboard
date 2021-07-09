@@ -180,9 +180,8 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-3o-NJe">
-                                                    <rect key="frame" x="99" y="504" width="280.66666666666663" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-3o-NJe">
+                                                    <rect key="frame" x="95.333333333333343" y="504" width="282.66666666666663" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
@@ -192,10 +191,13 @@
                                             <constraints>
                                                 <constraint firstItem="T7z-En-lv8" firstAttribute="leading" secondItem="ULn-sL-dNu" secondAttribute="leading" constant="10" id="48m-gY-RP3"/>
                                                 <constraint firstItem="jDA-hT-lEU" firstAttribute="top" secondItem="dZa-mL-5Pg" secondAttribute="bottom" constant="3" id="53n-gk-YK5"/>
+                                                <constraint firstItem="qI2-3o-NJe" firstAttribute="top" secondItem="S2p-4w-aMC" secondAttribute="bottom" constant="3" id="A4U-j5-0Eb"/>
                                                 <constraint firstItem="jDA-hT-lEU" firstAttribute="leading" secondItem="ULn-sL-dNu" secondAttribute="leading" constant="10" id="AE2-vH-zuq"/>
                                                 <constraint firstItem="jDA-hT-lEU" firstAttribute="top" secondItem="S2p-4w-aMC" secondAttribute="bottom" constant="3" id="Dn8-07-khv"/>
                                                 <constraint firstItem="MU2-0x-r2X" firstAttribute="leading" secondItem="ULn-sL-dNu" secondAttribute="leading" constant="10" id="EUh-r0-PHn"/>
                                                 <constraint firstItem="dZa-mL-5Pg" firstAttribute="top" secondItem="T7z-En-lv8" secondAttribute="bottom" constant="8" id="GeR-Df-eXd"/>
+                                                <constraint firstItem="qI2-3o-NJe" firstAttribute="leading" secondItem="jDA-hT-lEU" secondAttribute="trailing" constant="6" id="Hks-dd-hkZ"/>
+                                                <constraint firstAttribute="trailing" secondItem="qI2-3o-NJe" secondAttribute="trailing" constant="12" id="I22-vM-nAj"/>
                                                 <constraint firstItem="o5U-8w-M91" firstAttribute="leading" secondItem="ULn-sL-dNu" secondAttribute="leading" id="Jmd-0H-ExR"/>
                                                 <constraint firstItem="j6v-Qd-6kM" firstAttribute="leading" secondItem="MU2-0x-r2X" secondAttribute="trailing" constant="10" id="QIv-my-eKa"/>
                                                 <constraint firstItem="S2p-4w-aMC" firstAttribute="top" secondItem="T7z-En-lv8" secondAttribute="bottom" constant="8" id="RVF-w9-Pp3"/>
