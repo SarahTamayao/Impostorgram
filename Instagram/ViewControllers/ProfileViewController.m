@@ -41,11 +41,11 @@
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
-    self.profileImage.layer.cornerRadius = 50; 
+    self.profileImage.layer.cornerRadius = 50;
     
      
     [self getData:30];
-    
+     
      
     
     
@@ -54,7 +54,7 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing =0;
     
-    
+    self.profileImage.image = [UIImage imageNamed:@"profile pic instagram"];
     self.profileImage.userInteractionEnabled = YES;
  
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
@@ -64,7 +64,13 @@
     tapGesture1.delegate = self;
 
     [self.profileImage addGestureRecognizer:tapGesture1];
- 
+    
+    // Initialize a UIRefreshControl
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+    [refreshControl addTarget:self action:@selector(beginRefresh:) forControlEvents:UIControlEventValueChanged];
+    [self.collectionView insertSubview:refreshControl atIndex:0];
+    [refreshControl setTintColor:[UIColor lightGrayColor]]; 
+  
     
   //  CGFloat postersPerLine =3;
 //    CGFloat itemWidth = (self.collectionView.frame.size.width- layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
@@ -72,6 +78,28 @@
 //    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
       
 }
+
+// Makes a network request to get updated data
+ // Updates the tableView with the new data
+ // Hides the RefreshControl
+- (void)beginRefresh:(UIRefreshControl *)refreshControl {
+
+    // Parse query
+    
+    // Reload the tableView now that there is new data
+    if(self.posts.count < 20) {
+        [self getData: (int) 20];
+    } else if(self.posts.count >= 20) {
+        [self getData: (int) self.posts.count];
+      
+    }
+   // [self.collectionView reloadData];
+ 
+    // Tell the refreshControl to stop spinning
+    [refreshControl endRefreshing]; 
+
+}
+ 
 
 - (void) tapGesture: (id)sender
 {
@@ -111,6 +139,15 @@
         
     // Dismiss UIImagePickerController to go back to your original view controller
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+    PFUser *currentU = [PFUser currentUser];
+    PFFileObject *file = [Post getPFFileFromImage:self.profileImage.image]; 
+    currentU[@"image"] = file;
+    [currentU saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if(error!= nil) {
+            NSLog(@"%@", error.localizedDescription);
+        }
+    }];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -189,9 +226,9 @@
 
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
-    if(indexPath.item == 0) {
-        return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200);
-    }
+  //  if(indexPath.item == 0) {
+  //      return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200);
+   // }
     
     
     return CGSizeMake((CGRectGetWidth(collectionView.frame))/3.0,
