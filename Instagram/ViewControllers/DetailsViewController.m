@@ -42,8 +42,16 @@
     self.profileImage.layer.cornerRadius = 20;
     self.profileImage.clipsToBounds = YES;
     
-    self.profileImage.layer.cornerRadius = 20;
-    self.profileImage.clipsToBounds = YES;
+    PFUser *user = [PFUser currentUser];
+    if(user[@"image"]) {
+        PFFileObject *picFile =user[@"image"];
+        [picFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+            if(error==nil) {
+                self.profileImage.image = [UIImage imageWithData:data];
+            }
+        }];
+
+    }
      
     self.usernameLabel.text = post.author.username;
     
