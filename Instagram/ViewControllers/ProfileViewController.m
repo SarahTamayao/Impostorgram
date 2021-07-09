@@ -55,10 +55,10 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing =0;
     
-    CGFloat postersPerLine =3;
-    CGFloat itemWidth = (self.collectionView.frame.size.width- layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
-    CGFloat itemHeight = itemWidth * 1.5;
-    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+  //  CGFloat postersPerLine =3;
+//    CGFloat itemWidth = (self.collectionView.frame.size.width- layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
+//    CGFloat itemHeight = itemWidth * 1.5;
+//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
       
 }
 
@@ -117,9 +117,14 @@
     Post *post = self.posts[indexPath.row];
     cell.post = post;
    
-    cell.imageView.file = post.image; 
+    cell.imageView.file = post.image;
      
     return cell;
+}
+
+-(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    return CGSizeMake((CGRectGetWidth(collectionView.frame))/3.0,
+                      (CGRectGetWidth(collectionView.frame))/3.0); 
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
