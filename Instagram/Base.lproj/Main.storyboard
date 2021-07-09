@@ -3,6 +3,7 @@
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -48,6 +49,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlj-Gw-cT0">
                                 <rect key="frame" x="32" y="446" width="327" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="AccentColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Log In">
@@ -247,7 +249,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="724-X6-a2H">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="A4K-ae-Arn">
-                            <view key="customView" contentMode="scaleToFill" id="EpW-re-tNB">
+                            <view key="customView" contentMode="scaleToFill" ambiguous="YES" id="EpW-re-tNB">
                                 <rect key="frame" x="16" y="5.6666666666666679" width="86" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -491,6 +493,14 @@
                                 <rect key="frame" x="152" y="219" width="86" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8K-nF-eSv">
+                                <rect key="frame" x="44" y="460" width="25" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="G76-Vd-vTw"/>
+                                    <constraint firstAttribute="width" constant="25" id="fL1-DC-21H"/>
+                                </constraints>
+                                <state key="normal" image="icons8-topic-50"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ygd-rI-ICB"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -501,16 +511,20 @@
                             <constraint firstItem="v03-Ao-4MY" firstAttribute="leading" secondItem="ygd-rI-ICB" secondAttribute="leading" constant="8" id="DVe-L1-aJD"/>
                             <constraint firstItem="aPj-98-I7J" firstAttribute="top" secondItem="ygd-rI-ICB" secondAttribute="top" constant="26" id="H5a-di-Sd9"/>
                             <constraint firstItem="V5f-sy-Kfv" firstAttribute="top" secondItem="gfG-kz-Hz8" secondAttribute="bottom" constant="8" id="HxV-QG-jpd"/>
+                            <constraint firstItem="Gpn-iP-Cts" firstAttribute="top" secondItem="N8K-nF-eSv" secondAttribute="bottom" constant="10" id="IpX-Va-eZA"/>
                             <constraint firstItem="NaK-62-h9s" firstAttribute="top" secondItem="V5f-sy-Kfv" secondAttribute="bottom" constant="10" id="Pf5-9p-YZz"/>
                             <constraint firstItem="ygd-rI-ICB" firstAttribute="trailing" secondItem="aPj-98-I7J" secondAttribute="trailing" constant="14" id="Pw6-0a-pLl"/>
                             <constraint firstItem="v03-Ao-4MY" firstAttribute="top" secondItem="Gpn-iP-Cts" secondAttribute="bottom" constant="14" id="SO8-JW-QEc"/>
                             <constraint firstItem="V5f-sy-Kfv" firstAttribute="top" secondItem="aPj-98-I7J" secondAttribute="bottom" constant="16" id="YQK-Kt-G7x"/>
                             <constraint firstItem="gfG-kz-Hz8" firstAttribute="leading" secondItem="ygd-rI-ICB" secondAttribute="leading" constant="14" id="ZM5-Dy-AOR"/>
+                            <constraint firstItem="ygd-rI-ICB" firstAttribute="trailing" secondItem="N8K-nF-eSv" secondAttribute="trailing" constant="321" id="e5B-rO-HtD"/>
+                            <constraint firstItem="N8K-nF-eSv" firstAttribute="leading" secondItem="NaK-62-h9s" secondAttribute="trailing" constant="14" id="er3-9a-tXs"/>
                             <constraint firstItem="V5f-sy-Kfv" firstAttribute="trailing" secondItem="ygd-rI-ICB" secondAttribute="trailing" id="ixe-j9-GW3"/>
                             <constraint firstItem="aPj-98-I7J" firstAttribute="leading" secondItem="gfG-kz-Hz8" secondAttribute="trailing" constant="10" id="pHV-Py-7iT"/>
                             <constraint firstItem="gfG-kz-Hz8" firstAttribute="top" secondItem="zHe-3M-vca" secondAttribute="topMargin" constant="17" id="r8W-fv-GvA"/>
                             <constraint firstItem="V5f-sy-Kfv" firstAttribute="leading" secondItem="ygd-rI-ICB" secondAttribute="leading" id="vpC-0P-2S7"/>
                             <constraint firstItem="Gpn-iP-Cts" firstAttribute="top" secondItem="NaK-62-h9s" secondAttribute="bottom" constant="10" id="wUB-D4-yI4"/>
+                            <constraint firstItem="N8K-nF-eSv" firstAttribute="top" secondItem="V5f-sy-Kfv" secondAttribute="bottom" constant="7" id="wWW-oi-jht"/>
                             <constraint firstItem="Gpn-iP-Cts" firstAttribute="leading" secondItem="ygd-rI-ICB" secondAttribute="leading" constant="8" id="xXp-VK-hA8"/>
                             <constraint firstItem="NaK-62-h9s" firstAttribute="leading" secondItem="ygd-rI-ICB" secondAttribute="leading" constant="8" id="xxw-OL-ClY"/>
                         </constraints>
@@ -529,7 +543,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SxA-ET-fCd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2165" y="369"/>
+            <point key="canvasLocation" x="2164.6153846153848" y="368.95734597156394"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3bJ-ai-pTd">
+            <objects>
+                <viewController id="uFE-oB-tQn" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uZ4-UI-UZe">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xxg-8i-HYV"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Spo-AF-xio" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3018" y="369"/>
         </scene>
         <!--Compose View Controller-->
         <scene sceneID="4QF-kM-Ow5">
@@ -668,9 +698,13 @@
         <image name="iconmonstr-favorite-3-240" width="80" height="80"/>
         <image name="iconmonstr-heart-thin-240" width="80" height="80"/>
         <image name="iconmonstr-instagram-11-72" width="24" height="24"/>
+        <image name="icons8-topic-50" width="33.333332061767578" height="33.333332061767578"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta" width="311.33334350585938" height="105.33333587646484"/>
         <image name="profile pic instagram" width="236" height="236"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
