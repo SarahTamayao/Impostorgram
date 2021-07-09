@@ -13,6 +13,7 @@ target 'Instagram' do
     pod 'Mantle'
     pod 'Parse/UI'
     pod 'SVPullToRefresh'
+    pod 'MBProgressHUD'
 
   target 'InstagramTests' do
     inherit! :search_paths

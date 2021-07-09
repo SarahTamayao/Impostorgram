@@ -13,7 +13,8 @@
 #import <Parse/ParseUIConstants.h>
 #import <Parse/PFInstallation.h>
 #import <Parse/Parse.h>
-#import <Parse/PFImageView.h> 
+#import <Parse/PFImageView.h>
+#import "MBProgressHUD.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
@@ -31,12 +32,27 @@
 
 
 - (IBAction)didTapPost:(id)sender {
+    // Display HUD right before the request is made
+    [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
+    
     [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
     
+    // Hide HUD once the network request comes back (must be done on main UI thread)
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [MBProgressHUD hideHUDForView:self.view animated:TRUE];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1.0
+                                     target:self
+                                   selector:@selector(dismissThisView)
+                                   userInfo:nil
+                                    repeats:NO];
+              
     [self.delegate didPost];   
-} 
+}
+
+-(void) dismissThisView {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];

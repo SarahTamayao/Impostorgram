@@ -58,7 +58,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.profileImage.userInteractionEnabled = YES;
-    self.usernameLabel.userInteractionEnabled = YES; 
+    self.usernameLabel.userInteractionEnabled = YES;
  
 }
  
