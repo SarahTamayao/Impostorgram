@@ -123,8 +123,14 @@
 }
 
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
+    if(indexPath.item == 0) {
+        return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200); 
+    }
+    
+    
     return CGSizeMake((CGRectGetWidth(collectionView.frame))/3.0,
-                      (CGRectGetWidth(collectionView.frame))/3.0); 
+                      (CGRectGetWidth(collectionView.frame))/3.0);
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
