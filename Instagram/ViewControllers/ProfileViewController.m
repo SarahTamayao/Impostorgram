@@ -37,14 +37,13 @@
     PFUser *current = [PFUser currentUser];
     self.bigUsernameLabel.text = current.username;
     self.smallUsernameLabel.text = current.username;
-    
-//    if(current.image) {
-//        self.profileImage.file = current.image;
-//    }
-    
+
     self.collectionView.dataSource = self;
     self.collectionView.delegate = self;
     
+    self.profileImage.layer.cornerRadius = 50; 
+    
+     
     [self getData:30];
     
      
@@ -55,11 +54,77 @@
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing =0;
     
+    
+    self.profileImage.userInteractionEnabled = YES;
+ 
+    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
+
+    tapGesture1.numberOfTapsRequired = 1;
+
+    tapGesture1.delegate = self;
+
+    [self.profileImage addGestureRecognizer:tapGesture1];
+ 
+    
   //  CGFloat postersPerLine =3;
 //    CGFloat itemWidth = (self.collectionView.frame.size.width- layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
 //    CGFloat itemHeight = itemWidth * 1.5;
 //    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
       
+}
+
+- (void) tapGesture: (id)sender
+{
+    //instantiate an image picker
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+
+    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+      
+ }
+
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    // Get the image captured by the UIImagePickerController
+    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+     
+    UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
+
+    // Do something with the images (based on your use case)
+   // Post *newPost = [[Post alloc] init];
+
+    
+    self.profileImage.image = finalImage;
+    [self.profileImage reloadInputViews];
+        
+    // Dismiss UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (void)getData: (int) postLimit {
@@ -87,7 +152,7 @@
  
 - (IBAction)didTapLogOut:(id)sender {
    [self didLogOut];
-
+ 
 }
 
 //allows user to log out
@@ -125,7 +190,7 @@
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
     
     if(indexPath.item == 0) {
-        return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200); 
+        return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200);
     }
     
     
