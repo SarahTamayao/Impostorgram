@@ -12,16 +12,10 @@
 #import <Parse/PFInstallation.h>
 #import <Parse/Parse.h>
 #import <Parse/PFImageView.h>
+#import "ProfileViewController.h"
   
 
 @implementation PostCell
-
-
-
-
-
-
-
 
 - (IBAction)didTapFavorite:(id)sender {
     //favorite 
@@ -63,9 +57,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    
+    self.profileImage.userInteractionEnabled = YES;
+    self.usernameLabel.userInteractionEnabled = YES; 
+ 
 }
-
+ 
 
 - (void)setPost:(Post *)post {
     _post = post;

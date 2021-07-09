@@ -109,19 +109,27 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile pic instagram" translatesAutoresizingMaskIntoConstraints="NO" id="MU2-0x-r2X" customClass="PFImageView">
                                                     <rect key="frame" x="10" y="10" width="38" height="38"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="38" id="Jbv-IL-KBd"/>
                                                         <constraint firstAttribute="width" constant="38" id="Qf4-Za-rks"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="zCL-FQ-wTM" appends="YES" id="daL-ce-NMU"/>
+                                                    </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j6v-Qd-6kM">
                                                     <rect key="frame" x="58" y="19" width="304" height="21"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="g24-7O-a56"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="zCL-FQ-wTM" appends="YES" id="2LG-hU-GSg"/>
+                                                    </connections>
                                                 </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-8w-M91" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="56" width="390" height="390"/>
@@ -242,6 +250,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZC-7l-bYD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="zCL-FQ-wTM">
+                    <connections>
+                        <segue destination="aud-Cp-DwY" kind="presentation" identifier="fromUserToProfile" id="87u-bI-ghl"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2165" y="-339"/>
         </scene>
@@ -250,7 +263,7 @@
             <objects>
                 <viewController id="aud-Cp-DwY" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="dXb-yJ-uxD" customClass="Profile">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="673"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CT6-Je-Kpl" customClass="PFImageView">
@@ -380,7 +393,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FPl-Ug-loI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1027.6923076923076" y="1296.6824644549763"/>
+            <point key="canvasLocation" x="1495" y="1401"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="aCD-lT-2vF">
@@ -603,6 +616,7 @@
                 <tabBarController storyboardIdentifier="tabBarController" title="Tab Bar" automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="I0w-dx-yDc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="vwq-Qb-Urc">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -618,6 +632,9 @@
             <point key="canvasLocation" x="-55" y="77"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="87u-bI-ghl"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="home icon" width="32" height="32"/>
         <image name="iconmonstr-favorite-1-240" width="80" height="80"/>

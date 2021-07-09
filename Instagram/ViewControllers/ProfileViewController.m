@@ -148,6 +148,7 @@
             NSLog(@"%@", error.localizedDescription);
         }
     }];
+    
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -171,7 +172,7 @@
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
     [postQuery whereKey:@"author" equalTo: [PFUser currentUser]];
-    postQuery.limit = postLimit;
+    postQuery.limit = postLimit; 
 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {

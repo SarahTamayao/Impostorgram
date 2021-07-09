@@ -51,8 +51,15 @@
     //get rid of horizontal line separator
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
     
+    
+     
+    
+    
   //  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
+    
+    
 
+    
 }
 
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
