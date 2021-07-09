@@ -47,7 +47,7 @@
                                    userInfo:nil
                                     repeats:NO];
               
-    [self.delegate didPost];   
+    [self.delegate didPost];    
 }
 
 -(void) dismissThisView {
