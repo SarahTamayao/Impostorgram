@@ -509,7 +509,7 @@
                                 </constraints>
                                 <state key="normal" image="icons8-topic-50"/>
                                 <connections>
-                                    <segue destination="uFE-oB-tQn" kind="presentation" identifier="commentsSegue" id="f1v-HT-0AD"/>
+                                    <segue destination="uFE-oB-tQn" kind="presentation" identifier="toComments" id="f1v-HT-0AD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -590,18 +590,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N5a-qK-E8Z" customClass="PFImageView">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="N5a-qK-E8Z" customClass="PFImageView">
                                                     <rect key="frame" x="14" y="14" width="43" height="39"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="39" id="3sy-zQ-Mcd"/>
+                                                        <constraint firstAttribute="width" constant="43" id="ZrX-Db-zi9"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l5-Rc-Ywp">
-                                                    <rect key="frame" x="71" y="23" width="299" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0l5-Rc-Ywp">
+                                                    <rect key="frame" x="71" y="23" width="287" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0l5-Rc-Ywp" secondAttribute="bottom" constant="12" id="DsI-g9-qgj"/>
+                                                <constraint firstItem="0l5-Rc-Ywp" firstAttribute="leading" secondItem="N5a-qK-E8Z" secondAttribute="trailing" constant="14" id="EwZ-X0-n04"/>
+                                                <constraint firstItem="N5a-qK-E8Z" firstAttribute="leading" secondItem="wKU-xn-GZO" secondAttribute="leading" constant="14" id="Hq9-Ms-uUh"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="0l5-Rc-Ywp" secondAttribute="trailing" constant="12" id="OXm-HM-Xmd"/>
+                                                <constraint firstItem="N5a-qK-E8Z" firstAttribute="top" secondItem="wKU-xn-GZO" secondAttribute="top" constant="14" id="Sep-bJ-coz"/>
+                                                <constraint firstItem="0l5-Rc-Ywp" firstAttribute="top" secondItem="wKU-xn-GZO" secondAttribute="topMargin" constant="12" id="ht5-A5-R8v"/>
+                                                <constraint firstAttribute="bottom" secondItem="N5a-qK-E8Z" secondAttribute="bottom" constant="14" id="ypk-ed-SD2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>

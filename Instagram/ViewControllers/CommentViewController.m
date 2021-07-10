@@ -85,7 +85,7 @@
 
 //set how many rows in timeline display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.comments.count; 
 }
 
 //enables custom cell displays
