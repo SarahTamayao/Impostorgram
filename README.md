@@ -1,4 +1,4 @@
-# Project 4 - *Anna's Instagram*
+# Project 4 - *Impostorgram*
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/impostorgram.png'/>
 
 **Impostorgram** is a photo sharing app using Parse as its backend.
@@ -28,7 +28,7 @@ The following **optional** features are implemented:
   - [x] Display the profile photo with each post
   - [x] Tapping on a post's username or profile photo goes to that user's profile page
 - [x] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse
-- [ ] User can comment on a post and see all comments for each post in the post details screen.
+- [x] User can comment on a post and see all comments for each post in the post details screen.
 - [x] User can like a post and see number of likes for each post in the post details screen.
 - [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
