@@ -133,7 +133,7 @@
                                                         <outletCollection property="gestureRecognizers" destination="zCL-FQ-wTM" appends="YES" id="2LG-hU-GSg"/>
                                                     </connections>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-8w-M91" customClass="PFImageView">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="o5U-8w-M91" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="56" width="390" height="390"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="390" id="CNt-07-7Jr"/>
@@ -260,21 +260,21 @@
                                     <outletCollection property="gestureRecognizers" destination="A0I-sh-omk" appends="YES" id="8af-0s-mNB"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bth-W1-fht">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="nicki square" translatesAutoresizingMaskIntoConstraints="NO" id="bth-W1-fht">
                                 <rect key="frame" x="99" y="9" width="64" height="58"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="c6i-tE-Bhq" appends="YES" id="rzJ-IR-OgP"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="L5I-Ea-Ppg">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-07-09 at 6.14.17 PM" translatesAutoresizingMaskIntoConstraints="NO" id="L5I-Ea-Ppg">
                                 <rect key="frame" x="184" y="9" width="64" height="58"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="Uqx-tn-Bzb" appends="YES" id="Nql-6I-8Kp"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="D1d-TU-zPf">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Screen Shot 2021-07-09 at 6.15.50 PM" translatesAutoresizingMaskIntoConstraints="NO" id="D1d-TU-zPf">
                                 <rect key="frame" x="268" y="9" width="64" height="58"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -284,7 +284,7 @@
                                     <outletCollection property="gestureRecognizers" destination="QUo-SL-DWS" appends="YES" id="Pzd-WU-sAR"/>
                                 </connections>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="prn-qy-w7l">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tee" translatesAutoresizingMaskIntoConstraints="NO" id="prn-qy-w7l">
                                 <rect key="frame" x="352" y="9" width="64" height="58"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -324,7 +324,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="724-X6-a2H">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="A4K-ae-Arn">
-                            <view key="customView" contentMode="scaleToFill" id="EpW-re-tNB">
+                            <view key="customView" contentMode="scaleToFill" ambiguous="YES" id="EpW-re-tNB">
                                 <rect key="frame" x="16" y="5.6666666666666679" width="86" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -421,7 +421,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Khd-sC-i01">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="nicki" translatesAutoresizingMaskIntoConstraints="NO" id="Khd-sC-i01">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -442,7 +442,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YRr-QC-svZ">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="juice" translatesAutoresizingMaskIntoConstraints="NO" id="YRr-QC-svZ">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -463,7 +463,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZL3-sg-urK">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="liv" translatesAutoresizingMaskIntoConstraints="NO" id="ZL3-sg-urK">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -484,7 +484,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w13-nJ-ESc">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tee" translatesAutoresizingMaskIntoConstraints="NO" id="w13-nJ-ESc">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -998,6 +998,8 @@
         <segue reference="87u-bI-ghl"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Screen Shot 2021-07-09 at 6.14.17 PM" width="110.33333587646484" height="104.33333587646484"/>
+        <image name="Screen Shot 2021-07-09 at 6.15.50 PM" width="114" height="101.66666412353516"/>
         <image name="billie" width="640" height="896"/>
         <image name="billie square" width="155.33332824707031" height="139.33332824707031"/>
         <image name="home icon" width="32" height="32"/>
@@ -1008,7 +1010,12 @@
         <image name="icons8-topic-50" width="33.333332061767578" height="33.333332061767578"/>
         <image name="image_placeholder" width="375" height="375"/>
         <image name="insta" width="311.33334350585938" height="105.33333587646484"/>
+        <image name="juice" width="250" height="308.66665649414062"/>
+        <image name="liv" width="500" height="682.66668701171875"/>
+        <image name="nicki" width="192" height="341.33334350585938"/>
+        <image name="nicki square" width="195.33332824707031" height="166.66667175292969"/>
         <image name="profile pic instagram" width="236" height="236"/>
+        <image name="tee" width="178" height="237.33332824707031"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

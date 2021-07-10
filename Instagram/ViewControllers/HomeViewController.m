@@ -38,18 +38,34 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    [super viewDidLoad]; 
     
     self.story1.userInteractionEnabled =YES;
     self.story1.layer.cornerRadius = 30;
     [self.story1.layer setBorderColor: [[UIColor orangeColor] CGColor]];
     [self.story1.layer setBorderWidth: 1.2];
     
+    self.story2.userInteractionEnabled =YES;
+    self.story2.layer.cornerRadius = 30;
+    [self.story2.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [self.story2.layer setBorderWidth: 1.2];
     
+    self.story3.userInteractionEnabled =YES;
+    self.story3.layer.cornerRadius = 30;
+    [self.story3.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [self.story3.layer setBorderWidth: 1.2];
     
+    self.story4.userInteractionEnabled =YES;
+    self.story4.layer.cornerRadius = 30;
+    [self.story4.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [self.story4.layer setBorderWidth: 1.2];
     
-    
-    
+    self.story5.userInteractionEnabled =YES;
+    self.story5.layer.cornerRadius = 30;
+    [self.story5.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [self.story5.layer setBorderWidth: 1.2];
+     
+     
     //get the data to display and store it in local variable
     [self getData:20];
 
