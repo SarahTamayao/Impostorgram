@@ -37,7 +37,7 @@
     } else {
         NSMutableArray *commentArray = current[@"comments"];
         [commentArray insertObject:self.commentTextField.text atIndex:0];
-    } 
+    }
     
     [current saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if(error!= nil) {
@@ -51,7 +51,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //table view delegate
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     // Do any additional setup after loading the view.
+    self.profileImage.layer.cornerRadius = 20;
+    self.profileImage.clipsToBounds = YES;
     
     PFUser *user = [PFUser currentUser];
     if(user[@"image"]) {
@@ -64,40 +69,28 @@
     
     }
       
+    [self getData];
+    
 }
     
     
 //gets the comment array 
 - (void)getData {
      
-        // construct PFQuery
-        PFQuery *postQuery = [Post query];
-        [postQuery orderByDescending:@"createdAt"];
-        [postQuery includeKey:@"comments"];
-        postQuery.limit = 10;
-
-        // fetch data asynchronously
-        [postQuery findObjectsInBackgroundWithBlock:^(NSArray<NSString *> * _Nullable comments, NSError * _Nullable error) {
-            if (comments) {
-                NSMutableArray* commentsMutableArray = [comments mutableCopy];
-                self.comments = commentsMutableArray;
-                [self.tableView reloadData];
-            }
-            else {
-                NSLog(@"%@", error.localizedDescription);
-                NSLog(@"%@", @"CANNOT GET STUFF");
-            }
-        }];
+    if(self.post[@"comments"]) {
+        self.comments = self.post[@"comments"];
+        [self.tableView reloadData];
+    }
 }
 
 //set how many rows in timeline display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 1;
 }
 
 //enables custom cell displays
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(nonnull NSIndexPath *)indexPath {
-    
+      
     NSString *comment = self.comments[indexPath.row];
     
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
