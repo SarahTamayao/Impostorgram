@@ -19,6 +19,7 @@
 #import "NSDate+DateTools.h"
 #import "DetailsViewController.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
+#import "CommentViewController.h"
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -155,7 +156,7 @@
     cell.dateLabel.text = post.createdAt.timeAgoSinceNow;
     
     NSString* numString = [NSString stringWithFormat:@"%@", post.likeCount];
-    cell.numLikesLabel.text = numString;  
+    cell.numLikesLabel.text = numString;
           
     return cell;
 }
@@ -223,6 +224,18 @@
         DetailsViewController *detailsViewController = [segue destinationViewController];
         
         detailsViewController.post = post;
+        
+    } else if ([[segue identifier] isEqualToString:@"commentsSegue"]){
+        //comemnts details segue
+        UITableViewCell *tappedCell = sender;  
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        
+        Post *post = self.arrayOfPosts[indexPath.row];
+        
+        CommentViewController *commentsViewController = [segue destinationViewController];
+        
+        commentsViewController.post = post;
+    
         
     }
 }

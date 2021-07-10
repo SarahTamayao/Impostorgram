@@ -37,7 +37,7 @@
     } else {
         NSMutableArray *commentArray = current[@"comments"];
         [commentArray insertObject:self.commentTextField.text atIndex:0];
-    }
+    } 
     
     [current saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if(error!= nil) {

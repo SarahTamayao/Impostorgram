@@ -193,7 +193,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <state key="normal" image="icons8-topic-50"/>
                                                     <connections>
-                                                        <segue destination="uFE-oB-tQn" kind="presentation" id="B1q-7g-LMm"/>
+                                                        <segue destination="uFE-oB-tQn" kind="presentation" identifier="commentsSegue" id="B1q-7g-LMm"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -509,7 +509,7 @@
                                 </constraints>
                                 <state key="normal" image="icons8-topic-50"/>
                                 <connections>
-                                    <segue destination="uFE-oB-tQn" kind="presentation" id="f1v-HT-0AD"/>
+                                    <segue destination="uFE-oB-tQn" kind="presentation" identifier="commentsSegue" id="f1v-HT-0AD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -781,7 +781,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B1q-7g-LMm"/>
+        <segue reference="f1v-HT-0AD"/>
         <segue reference="87u-bI-ghl"/>
     </inferredMetricsTieBreakers>
     <resources>
