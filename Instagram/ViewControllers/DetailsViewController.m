@@ -154,7 +154,7 @@
         commentsViewController.post = self.post;
     
         
-    }
+    } 
 }
 
 
