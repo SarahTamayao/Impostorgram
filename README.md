@@ -53,7 +53,40 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+Main: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/final%20ig%20demo%20main.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Login/Signup: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Posting (camera): 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/post%20camera%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Posting (photo library): 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Profile and editing profile image: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Instagram stories: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/stories%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+
+Infinite scroll and loading: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/refresh%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Double tap to like: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/double%20tap%20like%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+
 
 GIF created with [Kap](https://getkap.co/).
 
@@ -62,6 +95,10 @@ GIF created with [Kap](https://getkap.co/).
 List an 3rd party libraries, icons, graphics, or other assets you used in your app.
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
+- [Parse]
+- [DateTools]
+- [SVPullToRefresh]
+- [MBProgressHUD]
 
 
 ## Notes
