@@ -84,7 +84,7 @@ Infinite scroll and loading:
 
 Double tap to like: 
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/double%20tap%20like%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 
 
