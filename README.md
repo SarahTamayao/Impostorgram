@@ -53,7 +53,26 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
+Main: 
+
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/ig%20demo%20main.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+Login/Signup: 
+
+Posting (camera): 
+
+Posting (photo library): 
+
+Profile and editing profile image: 
+
+Instagram stories: 
+
+
+Infinite scroll and loading: 
+
+Double tap to like: 
+
+
 
 GIF created with [Kap](https://getkap.co/).
 
