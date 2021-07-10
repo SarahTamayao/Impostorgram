@@ -20,8 +20,10 @@
 #import "DetailsViewController.h"
 #import "UIScrollView+SVInfiniteScrolling.h"
 #import "CommentViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *story1;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
 
@@ -33,6 +35,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.story1.userInteractionEnabled =YES;
+    self.story1.layer.cornerRadius = 30;
+    [self.story1.layer setBorderColor: [[UIColor orangeColor] CGColor]];
+    [self.story1.layer setBorderWidth: 1.2];
+    
+    
+    
+    
+    
     
     //get the data to display and store it in local variable
     [self getData:20];
@@ -227,7 +239,7 @@
         
     } else if ([[segue identifier] isEqualToString:@"commentsSegue"]){
         //comemnts details segue
-        UITableViewCell *tappedCell = sender;  
+        UITableViewCell *tappedCell = sender;
         NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
         
         Post *post = self.arrayOfPosts[indexPath.row];
