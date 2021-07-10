@@ -324,7 +324,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="724-X6-a2H">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="A4K-ae-Arn">
-                            <view key="customView" contentMode="scaleToFill" ambiguous="YES" id="EpW-re-tNB">
+                            <view key="customView" contentMode="scaleToFill" id="EpW-re-tNB">
                                 <rect key="frame" x="16" y="5.6666666666666679" width="86" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
