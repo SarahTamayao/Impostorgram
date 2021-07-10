@@ -71,7 +71,7 @@ Posting (photo library):
 
 Profile and editing profile image: 
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/prof%20pic%20ig%20demo.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 Instagram stories: 
 
