@@ -75,7 +75,7 @@ Profile and editing profile image:
 
 Instagram stories: 
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/stories%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 
 Infinite scroll and loading: 
