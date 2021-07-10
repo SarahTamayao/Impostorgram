@@ -59,18 +59,32 @@ Main:
 
 Login/Signup: 
 
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
 Posting (camera): 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 Posting (photo library): 
 
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
 Profile and editing profile image: 
 
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
 Instagram stories: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 
 Infinite scroll and loading: 
 
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
 Double tap to like: 
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 
 
