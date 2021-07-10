@@ -1,4 +1,4 @@
-# Project 4 - *Anna's Instagram*
+# Project 4 - *Impostorgram*
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/impostorgram.png'/>
 
 **Impostorgram** is a photo sharing app using Parse as its backend.
