@@ -38,7 +38,7 @@
 @implementation HomeViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad]; 
+    [super viewDidLoad];
     
     self.story1.userInteractionEnabled =YES;
     self.story1.layer.cornerRadius = 30;
@@ -88,7 +88,7 @@
      
     
     
-  //  [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
+  //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
     
     
 
