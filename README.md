@@ -55,7 +55,7 @@ Here's a walkthrough of implemented user stories:
 
 Main: 
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ig%20demo%20main.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/final%20ig%20demo%20main.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 Login/Signup: 
 
