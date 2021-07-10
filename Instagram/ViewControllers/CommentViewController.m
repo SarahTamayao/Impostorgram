@@ -43,7 +43,9 @@
         if(error!= nil) {
             NSLog(@"%@", error.localizedDescription);
         }
-    }]; 
+    }];
+    
+    [self.tableView reloadData];
 }
     
 
@@ -99,7 +101,7 @@
     NSString *comment = self.comments[indexPath.row];
     
     CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
-    cell.commentLabel = comment;
+    cell.commentLabel.text = comment;
     
     cell.profileImage.layer.cornerRadius = 20;
     cell.profileImage.clipsToBounds = YES;

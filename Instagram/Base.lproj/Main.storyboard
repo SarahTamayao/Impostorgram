@@ -140,6 +140,21 @@
                                                         <constraint firstAttribute="width" constant="390" id="gMX-eS-yVQ"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDA-hT-lEU">
+                                                    <rect key="frame" x="10" y="504" width="79.333333333333329" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="WaP-Di-lna"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-3o-NJe">
+                                                    <rect key="frame" x="95.333333333333343" y="504" width="282.66666666666663" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 hour ago" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSB-oI-C23">
                                                     <rect key="frame" x="10" y="541" width="372" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
@@ -173,21 +188,14 @@
                                                     <color key="textColor" white="0.96928540699999999" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jDA-hT-lEU">
-                                                    <rect key="frame" x="10" y="504" width="79.333333333333329" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="21" id="WaP-Di-lna"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qI2-3o-NJe">
-                                                    <rect key="frame" x="95.333333333333343" y="504" width="282.66666666666663" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="deV-y2-YcB">
+                                                    <rect key="frame" x="46" y="453" width="23" height="23"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <state key="normal" image="icons8-topic-50"/>
+                                                    <connections>
+                                                        <segue destination="uFE-oB-tQn" kind="presentation" id="B1q-7g-LMm"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
@@ -773,6 +781,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="B1q-7g-LMm"/>
         <segue reference="87u-bI-ghl"/>
     </inferredMetricsTieBreakers>
     <resources>
