@@ -29,6 +29,7 @@
 
 - (IBAction)didTapPost:(id)sender {
     
+    
     Post *current = self.post;
     
     if(current[@"comments"] == nil) {
@@ -45,17 +46,24 @@
         }
     }];
     
+    self.commentTextField.text = @""; 
     [self.tableView reloadData];
 }
     
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
+                initWithTarget:self action:@selector(handleSingleTap:)];
+    tapper.cancelsTouchesInView = NO;
+    [self.view addGestureRecognizer:tapper];
+    
     //table view delegate
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     // Do any additional setup after loading the view.
-    self.profileImage.layer.cornerRadius = 20;
+    self.profileImage.layer.cornerRadius = 30;
     self.profileImage.clipsToBounds = YES;
     
     PFUser *user = [PFUser currentUser];
@@ -68,9 +76,16 @@
         }];
     
     }
+
       
     [self getData];
     
+    
+}
+
+- (void)handleSingleTap:(UITapGestureRecognizer *) sender
+{
+    [self.view endEditing:YES];
 }
     
     
@@ -85,7 +100,7 @@
 
 //set how many rows in timeline display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.comments.count; 
+    return self.comments.count;
 }
 
 //enables custom cell displays
