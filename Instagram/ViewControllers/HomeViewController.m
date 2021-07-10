@@ -24,8 +24,12 @@
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *story1;
+@property (weak, nonatomic) IBOutlet UIImageView *story2;
+@property (weak, nonatomic) IBOutlet UIImageView *story3;
+@property (weak, nonatomic) IBOutlet UIImageView *story4;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *arrayOfPosts;
+@property (weak, nonatomic) IBOutlet UIImageView *story5;
 
 @property (assign, nonatomic) BOOL dataDoneLoading;
  
