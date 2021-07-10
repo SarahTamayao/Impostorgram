@@ -42,6 +42,7 @@ The following **additional** features are implemented:
 - [x] Right after user posts an image, the home feed will display the newest post automatically. 
 - [x] Shows user alert when trying to log in with invalid credentials. 
 - [x] Implemented double tap gesture for liking images. 
+- [x] Added Instagram stories view to the feed page.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
