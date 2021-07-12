@@ -15,6 +15,8 @@
 #import <Parse/Parse.h>
 #import <Parse/PFImageView.h>
 #import "MBProgressHUD.h"
+#import "CameraViewController.h"
+#import "SceneDelegate.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *captionTextField;
@@ -47,7 +49,7 @@
                                    userInfo:nil
                                     repeats:NO];
               
-    [self.delegate didPost];    
+    [self.delegate didPost];
 }
 
 -(void) dismissThisView {
@@ -72,28 +74,37 @@
 
 - (void) tapGesture: (id)sender
 {
-    //instantiate an image picker
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-
-    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
-    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
-      
+//    //instantiate an image picker
+//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+//    imagePickerVC.delegate = self;
+//    imagePickerVC.allowsEditing = YES;
+//
+//    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
+//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+//    }
+//    else {
+//        NSLog(@"Camera 🚫 available so we will use photo library instead");
+//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//    }
+//
+//    [self presentViewController:imagePickerVC animated:YES completion:nil];
+    
+//    CameraViewController *customCameraView = [CameraViewController new];
+//    [self presentViewController:customCameraView animated:YES completion:nil];
+//
+    
+    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    CameraViewController *cameraViewController = [storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
+    myDelegate.window.rootViewController = cameraViewController; 
  }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
-    UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+   // UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
     UIImage *editedImage = info[UIImagePickerControllerEditedImage];
      
     UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
