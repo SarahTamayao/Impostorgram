@@ -24,7 +24,7 @@
 
 
 @end
-
+ 
 @implementation ComposeViewController
 - (IBAction)didTapCancel:(id)sender {
     
@@ -32,24 +32,50 @@
     
 }
 
+- (void)didFinishTakingPhoto {
+    // construct PFQuery
+    PFQuery *postQuery = [Post query];
+    [postQuery orderByDescending:@"createdAt"];
+    [postQuery whereKey:@"caption" equalTo:@""];
+    postQuery.limit = 1;
+    
+
+    // fetch data asynchronously
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        if (posts.count >0) {
+            PFFileObject *image = posts[0].image;
+            self.imageView.file = image;
+            [self.imageView reloadInputViews];
+        }
+    }];
+     
+}
+
+-(void)refresh {
+    [self.imageView reloadInputViews];
+}
+ 
 
 - (IBAction)didTapPost:(id)sender {
     // Display HUD right before the request is made
-    [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
+  //  [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
     
-    [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
+//    [Post postUserImage:self.imageView.image withCaption: self.captionTextField.text withCompletion:nil];
     
     // Hide HUD once the network request comes back (must be done on main UI thread)
     
-    [MBProgressHUD hideHUDForView:self.view animated:TRUE];
+ //   [MBProgressHUD hideHUDForView:self.view animated:TRUE];
     
-    [NSTimer scheduledTimerWithTimeInterval:1.0
-                                     target:self
-                                   selector:@selector(dismissThisView)
-                                   userInfo:nil
-                                    repeats:NO];
+  //  [NSTimer scheduledTimerWithTimeInterval:1.0
+//                                     target:self
+//                                   selector:@selector(dismissThisView)
+//                                   userInfo:nil
+//                                    repeats:NO];
               
+
+    
     [self.delegate didPost];
+    [self dismissThisView]; 
 }
 
 -(void) dismissThisView {
@@ -60,79 +86,84 @@
     [super viewDidLoad];
     
     self.imageView.userInteractionEnabled = YES;
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(didFinishTakingPhoto) userInfo:nil repeats:true];
+    
+    [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
+    
+  
  
-    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
+//    UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
+//
+//    tapGesture1.numberOfTapsRequired = 1;
+//
+//    tapGesture1.delegate = self;
 
-    tapGesture1.numberOfTapsRequired = 1; 
-
-    tapGesture1.delegate = self;
-
-    [self.imageView addGestureRecognizer:tapGesture1];
+  //  [self.imageView addGestureRecognizer:tapGesture1];
 
  
 }
 
-- (void) tapGesture: (id)sender
-{
-//    //instantiate an image picker
-//    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-//    imagePickerVC.delegate = self;
-//    imagePickerVC.allowsEditing = YES;
+//- (void) tapGesture: (id)sender
+//{
+////    //instantiate an image picker
+////    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+////    imagePickerVC.delegate = self;
+////    imagePickerVC.allowsEditing = YES;
+////
+////    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
+////    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+////        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+////    }
+////    else {
+////        NSLog(@"Camera 🚫 available so we will use photo library instead");
+////        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+////    }
+////
+////    [self presentViewController:imagePickerVC animated:YES completion:nil];
 //
-//    // The Xcode simulator does not support taking pictures, so let's first check that the camera is indeed supported on the device before trying to present it.
-//    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-//    }
-//    else {
-//        NSLog(@"Camera 🚫 available so we will use photo library instead");
-//        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//    }
+////    CameraViewController *customCameraView = [CameraViewController new];
+////    [self presentViewController:customCameraView animated:YES completion:nil];
+////
 //
-//    [self presentViewController:imagePickerVC animated:YES completion:nil];
-    
-//    CameraViewController *customCameraView = [CameraViewController new];
-//    [self presentViewController:customCameraView animated:YES completion:nil];
-//
-    
-    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
-    
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    CameraViewController *cameraViewController = [storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
-    myDelegate.window.rootViewController = cameraViewController; 
- }
+////    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+////
+////    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+////    CameraViewController *cameraViewController = [storyboard instantiateViewControllerWithIdentifier:@"CameraViewController"];
+////    myDelegate.window.rootViewController = cameraViewController;
+// }
 
-- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+//- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
    // UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
-    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
-     
-    UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
+//    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+//
+//    UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
 
     // Do something with the images (based on your use case)
    // Post *newPost = [[Post alloc] init];
 
-    
-    self.imageView.image = finalImage;
-    [self.imageView reloadInputViews];
+//
+//    self.imageView.image = finalImage;
+//    [self.imageView reloadInputViews]; 
     
     // Dismiss UIImagePickerController to go back to your original view controller
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
+   // [self dismissViewControllerAnimated:YES completion:nil];
 
-- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
-    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
-    
-    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
-    resizeImageView.image = image;
-    
-    UIGraphicsBeginImageContext(size);
-    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    
-    return newImage;
-}
+//- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+//    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+//
+//    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+//    resizeImageView.image = image;
+//
+//    UIGraphicsBeginImageContext(size);
+//    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+//    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+//    UIGraphicsEndImageContext();
+//
+//    return newImage;
+//}
 
 
 

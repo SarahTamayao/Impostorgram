@@ -11,8 +11,11 @@
 #import <AVFoundation/AVCaptureDevice.h>
 #import <AVFoundation/AVCaptureInput.h>
 #import <AVFoundation/AVCaptureVideoPreviewLayer.h>
+#import "ComposeViewController.h"
+#import "SceneDelegate.h"
+#import "Post.h"
 
-@interface CameraViewController ()
+@interface CameraViewController () <UINavigationControllerDelegate> 
 @property (weak, nonatomic) IBOutlet UIView *previewView;
 @property (weak, nonatomic) IBOutlet UIImageView *captureImageView;
 
@@ -22,7 +25,26 @@
 
 @end
 
+
+
 @implementation CameraViewController
+
+//- (IBAction)didTapDone:(id)sender {
+//
+//
+//
+//    [self dismissViewControllerAnimated:YES completion:nil];
+
+
+//    SceneDelegate *myDelegate = (SceneDelegate *)self.view.window.windowScene.delegate;
+//
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//    ComposeViewController *composeViewController = [storyboard instantiateViewControllerWithIdentifier:@"ComposeViewController"];
+//    myDelegate.window.rootViewController = composeViewController;
+//}
+
+
+
 - (IBAction)didTakePhoto:(id)sender {
     AVCapturePhotoSettings *settings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey: AVVideoCodecTypeJPEG}];
 
@@ -74,9 +96,29 @@
         // Add the image to captureImageView
         self.captureImageView.image = image;
         
-        NSLog(@"successful"); 
+        
+        UIImage *finalImage = [self resizeImage:self.captureImageView.image withSize:CGSizeMake(300, 300)];
+        [Post postUserImage:finalImage withCaption: @"" withCompletion:nil];
+         
+        NSLog(@"successful");
+   
+ 
     }
 }
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+} 
 
 
 //Configure the Live Preview

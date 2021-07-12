@@ -107,8 +107,8 @@
     // construct PFQuery
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
-    [postQuery includeKey:@"author"];
-    postQuery.limit = postLimit;
+    [postQuery includeKey:@"author"]; 
+    postQuery.limit = postLimit; 
 
     // fetch data asynchronously
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -130,6 +130,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery orderByDescending:@"createdAt"];
     [postQuery includeKey:@"author"];
+    [postQuery whereKeyExists:@"caption"];
     postQuery.limit = self.arrayOfPosts.count;
  
     // fetch data asynchronously
