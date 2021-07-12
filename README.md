@@ -32,7 +32,7 @@ The following **optional** features are implemented:
 - [x] User can like a post and see number of likes for each post in the post details screen.
 - [x] Style the login page to look like the real Instagram login page.
 - [x] Style the feed to look like the real Instagram feed.
-- [ ] Implement a custom camera view.
+- [x] Implement a custom camera view.
 
 The following **additional** features are implemented:
 
@@ -64,6 +64,10 @@ Here's a walkthrough of implemented user stories:
 *Posting (camera):*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/post%20camera%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
+
+*Posting (**custom** camera view):*
+
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/custom%20camera%20view%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 *Posting (photo library):*
 
