@@ -27,9 +27,11 @@
 
 @implementation CommentViewController
 
+
+//when user taps on post to psot a comment
 - (IBAction)didTapPost:(id)sender {
     
-    
+    //send comment to parse backend
     Post *current = self.post;
     
     if(current[@"comments"] == nil) {
@@ -54,6 +56,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //makes the keyboard disappear
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                 initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
@@ -98,7 +101,7 @@
     }
 }
 
-//set how many rows in timeline display
+//set how many rows in display
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.comments.count;
 }

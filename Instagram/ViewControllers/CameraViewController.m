@@ -13,8 +13,8 @@
 #import <AVFoundation/AVCaptureVideoPreviewLayer.h>
 
 @interface CameraViewController ()
-@property (weak, nonatomic) IBOutlet UIView *previewView;
-@property (weak, nonatomic) IBOutlet UIImageView *captureImageView;
+@property (weak, nonatomic) IBOutlet UIView *previewView;    //the camera
+@property (weak, nonatomic) IBOutlet UIImageView *captureImageView; //the preview of the taken pic
 
 @property (nonatomic) AVCaptureSession *captureSession;
 @property (nonatomic) AVCapturePhotoOutput *stillImageOutput;
@@ -23,6 +23,8 @@
 @end
 
 @implementation CameraViewController
+
+//when user takes a pic
 - (IBAction)didTakePhoto:(id)sender {
     AVCapturePhotoSettings *settings = [AVCapturePhotoSettings photoSettingsWithFormat:@{AVVideoCodecKey: AVVideoCodecTypeJPEG}];
 

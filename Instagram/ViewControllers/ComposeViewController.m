@@ -19,20 +19,22 @@
 #import "SceneDelegate.h"
 
 @interface ComposeViewController () <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
-@property (weak, nonatomic) IBOutlet UITextField *captionTextField;
-@property (weak, nonatomic) IBOutlet PFImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *captionTextField; //caption
+@property (weak, nonatomic) IBOutlet PFImageView *imageView; //user's post's image
   
 
 @end
 
 @implementation ComposeViewController
+
+//cancel action
 - (IBAction)didTapCancel:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil]; 
     
 }
 
-
+//when user clicks on post
 - (IBAction)didTapPost:(id)sender {
     // Display HUD right before the request is made
     [MBProgressHUD showHUDAddedTo:self.view animated:TRUE];
@@ -52,6 +54,7 @@
     [self.delegate didPost];
 }
 
+//closes the current view
 -(void) dismissThisView {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
@@ -59,6 +62,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //makes the image placeholder icon clickable
     self.imageView.userInteractionEnabled = YES;
  
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
@@ -69,7 +73,6 @@
 
     [self.imageView addGestureRecognizer:tapGesture1];
 
- 
 }
 
 - (void) tapGesture: (id)sender
@@ -104,10 +107,7 @@
      
     UIImage *finalImage = [self resizeImage:editedImage withSize:CGSizeMake(300, 300)];
 
-    // Do something with the images (based on your use case)
-   // Post *newPost = [[Post alloc] init];
-
-    
+    // update image in view
     self.imageView.image = finalImage;
     [self.imageView reloadInputViews];
     
@@ -115,6 +115,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+//resizes the given image 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     

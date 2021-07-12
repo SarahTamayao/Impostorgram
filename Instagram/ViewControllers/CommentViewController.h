@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface CommentViewController : UIViewController
 
-@property (nonatomic, strong) Post *post;  
+@property (nonatomic, strong) Post *post;  //current post 
 
 @end
 

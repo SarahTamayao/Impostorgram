@@ -21,19 +21,19 @@
 
 @interface ProfileViewController ()  <UICollectionViewDataSource, UICollectionViewDelegate, UICollisionBehaviorDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *bigUsernameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *bigUsernameLabel;  //username
 @property (weak, nonatomic) IBOutlet UILabel *smallUsernameLabel;
-@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage; //profile image
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
-@property (nonatomic, strong) NSMutableArray *posts;
+@property (nonatomic, strong) NSMutableArray *posts; //stores posts
 
 @end
 
 @implementation ProfileViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // set up
     PFUser *current = [PFUser currentUser];
     self.bigUsernameLabel.text = current.username;
     self.smallUsernameLabel.text = current.username;
@@ -47,12 +47,14 @@
     [self getData:30];
      
 
-    
+    //set the layout of the collection view
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *) self.collectionView.collectionViewLayout;
     
     layout.minimumLineSpacing = 0;
     layout.minimumInteritemSpacing =0;
     
+    
+    //set up
     self.profileImage.image = [UIImage imageNamed:@"profile pic instagram"];
     self.profileImage.userInteractionEnabled = YES;
  
@@ -70,11 +72,7 @@
     [self.collectionView insertSubview:refreshControl atIndex:0];
     [refreshControl setTintColor:[UIColor lightGrayColor]]; 
   
-    
-  //  CGFloat postersPerLine =3;
-//    CGFloat itemWidth = (self.collectionView.frame.size.width- layout.minimumInteritemSpacing * (postersPerLine-1)) / postersPerLine;
-//    CGFloat itemHeight = itemWidth * 1.5;
-//    layout.itemSize = CGSizeMake(itemWidth, itemHeight);
+
       
 }
 
@@ -92,7 +90,6 @@
         [self getData: (int) self.posts.count];
       
     }
-   // [self.collectionView reloadData];
  
     // Tell the refreshControl to stop spinning
     [refreshControl endRefreshing]; 
@@ -120,7 +117,7 @@
       
  }
 
-
+//for changing profile image
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
     
     // Get the image captured by the UIImagePickerController
@@ -150,6 +147,8 @@
     
 }
 
+
+//allows the resizing of given image
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
     UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
     
@@ -164,6 +163,8 @@
     return newImage;
 }
 
+
+//gets the data from parse backend
 - (void)getData: (int) postLimit {
  
     // construct PFQuery
@@ -211,7 +212,7 @@
     
 }
 
-
+//sets up the collection view
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
     GridCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"GridCell" forIndexPath:indexPath];
@@ -224,13 +225,9 @@
     return cell;
 }
 
+//layout 
 -(CGSize) collectionView:(UICollectionView *) collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    
-  //  if(indexPath.item == 0) {
-  //      return CGSizeMake((CGRectGetWidth(collectionView.frame)), 200);
-   // }
-    
-    
+  
     return CGSizeMake((CGRectGetWidth(collectionView.frame))/3.0,
                       (CGRectGetWidth(collectionView.frame))/3.0);
 }

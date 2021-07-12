@@ -19,12 +19,12 @@
 
 @property (weak, nonatomic) IBOutlet PFImageView *postImageView;
  
-@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
-@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *smallUsernameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *captionLabel;
-@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *heartImage;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;  //like button
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;  //username
+@property (weak, nonatomic) IBOutlet UILabel *smallUsernameLabel; //other username
+@property (weak, nonatomic) IBOutlet UILabel *captionLabel; //caption
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel; //date ago
+@property (weak, nonatomic) IBOutlet UIImageView *heartImage; //the like icon
 
 
 @end
@@ -33,8 +33,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //setup
     Post *post = self.post;
     
+    
+    //like icon setup ui
     self.heartImage.alpha =0;
     self.heartImage.hidden = NO;
     
@@ -43,6 +47,7 @@
     self.profileImage.layer.cornerRadius = 20;
     self.profileImage.clipsToBounds = YES;
     
+    //get the image
     PFUser *user = [PFUser currentUser];
     if(user[@"image"]) {
         PFFileObject *picFile =user[@"image"];
@@ -54,6 +59,7 @@
 
     }
      
+    //set up the view
     self.usernameLabel.text = post.author.username;
     
     self.smallUsernameLabel.text =post.author.username;
@@ -67,6 +73,7 @@
     //double tap action 
     self.postImageView.userInteractionEnabled = YES;
  
+    //makes the post double tap likeable
     UITapGestureRecognizer *tapGesture1 = [[UITapGestureRecognizer alloc] initWithTarget:self  action:@selector(tapGesture:)];
 
     tapGesture1.numberOfTapsRequired = 2;
@@ -77,6 +84,7 @@
         
 }
 
+//the double tap action animation
 - (void) tapGesture: (id)sender
 {
     [UIView animateWithDuration:3.00
@@ -98,6 +106,8 @@
     [self refreshDataFavorite];
  }
  
+
+//when user taps favorite 
 - (IBAction)didTapFavorite:(id)sender {
       
     //favorite
@@ -154,7 +164,7 @@
         commentsViewController.post = self.post;
     
         
-    } 
+    }
 }
 
 

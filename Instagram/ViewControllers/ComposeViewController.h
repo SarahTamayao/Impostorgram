@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ComposeViewController : UIViewController
 
+//delegate for didpost method in homeviewcontroller
 @property (nonatomic, weak) id<ComposeViewControllerDelegate> delegate;
 
 @end
