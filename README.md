@@ -3,7 +3,7 @@
 
 **Impostorgram** is a photo sharing app using Parse as its backend.
 
-Time spent: **X** hours spent in total
+Time spent: **31** hours spent in total
 
 ## User Stories
 
@@ -46,43 +46,43 @@ The following **additional** features are implemented:
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. I'd like to talk about creating model for Parse (like User and Post). What are the benefits and downsizes as opposed to directly setting it as a parameter/property. Like what I did for comments. 
+2. I really liked Chris' lecture on API yesterday and I'd like to explore more. 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-Main: 
+*Main:*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/final%20ig%20demo%20main.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Login/Signup: 
+*Login/Signup:*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Posting (camera): 
+*Posting (camera):*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/post%20camera%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Posting (photo library): 
+*Posting (photo library):*
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/post%20library%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Profile and editing profile image: 
+*Profile and editing profile image:* 
 
-<img src='https://github.com/athomas9195/Impostorgram/blob/main/ezgif.com-gif-maker%20(2).gif' title='Video - Main' width='' alt='Video Walkthrough' />
+<img src='https://github.com/athomas9195/Impostorgram/blob/main/prof%20pic%20ig%20demo.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Instagram stories: 
+*Instagram stories:*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/stories%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
 
-Infinite scroll and loading: 
+*Infinite scroll and loading:*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/refresh%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
-Double tap to like: 
+*Double tap to like:*
 
 <img src='https://github.com/athomas9195/Impostorgram/blob/main/double%20tap%20like%20demo%20ig.gif' title='Video - Main' width='' alt='Video Walkthrough' />
 
@@ -103,7 +103,7 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Some challenges I encountered were implementing the comments section and also making the profile picture appear for each post after changing the pic in the profile view. Something I want to work on and improve is the style of my code. I really liked this project becuase of the exciting challenges!
 
 ## License
 
