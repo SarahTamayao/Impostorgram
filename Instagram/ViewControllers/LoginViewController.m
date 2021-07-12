@@ -22,26 +22,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-//    UIImage *backgroundImage = [UIImage imageNamed:@"background ig"];
-//    UIImageView *backgroundImageView=[[UIImageView alloc]initWithFrame:self.view.frame];
-//    backgroundImageView.image=backgroundImage;
-//    [self.view insertSubview:backgroundImageView atIndex:0];
-//
+
+    //set up a gesture recognizer for when user finishes typing so the keyboard can
+    //be dismissed
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc]
                 initWithTarget:self action:@selector(handleSingleTap:)];
     tapper.cancelsTouchesInView = NO;
     [self.view addGestureRecognizer:tapper];
 
+    //set the login button ui
     [self.logInButton.layer setBorderWidth:1.0];
     [self.logInButton.layer setBorderColor:[[UIColor lightGrayColor] CGColor]];
     [self.logInButton.layer setCornerRadius:5.0];
 }
 
+//gesture tap for keyboard dismissing
 - (void)handleSingleTap:(UITapGestureRecognizer *) sender
 {
     [self.view endEditing:YES];
 }
 
+//when user taps sign up
 - (IBAction)didTapSignUp:(id)sender {
     if([self.usernameTextField.text isEqual:@""]) {
         [self showAlertAction:@"Username is empty"];
@@ -54,6 +55,7 @@
     [self registerUser];
 }
 
+//when user taps login
 - (IBAction)didTapLogIn:(id)sender {
     if([self.usernameTextField.text isEqual:@""]) {
         [self showAlertAction:@"Username is empty"];
@@ -66,6 +68,7 @@
     [self loginUser];
 }
 
+//display errors when user cannot login or signup
 -(void)showAlertAction:(NSString *) message {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error" message:message preferredStyle:(UIAlertControllerStyleAlert)];
     
@@ -79,6 +82,7 @@
     }];
 }
 
+//send parse the auth data
 - (void)registerUser {
     // initialize a user object
     PFUser *newUser = [PFUser user];
@@ -100,7 +104,7 @@
     }];
 }
 
-
+//send parse login info 
 - (void)loginUser {
     NSString *username = self.usernameTextField.text;
     NSString *password = self.passwordTextField.text;

@@ -59,6 +59,7 @@
      
 }
 
+//load
 - (void)awakeFromNib {
     [super awakeFromNib];
     self.profileImage.userInteractionEnabled = YES;
@@ -66,7 +67,7 @@
  
 }
  
-
+//set the post to current one
 - (void)setPost:(Post *)post {
     _post = post;
     self.postImageView.file = post[@"image"];

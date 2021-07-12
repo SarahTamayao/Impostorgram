@@ -23,14 +23,15 @@
 #import <QuartzCore/QuartzCore.h>
 
 @interface HomeViewController () <ComposeViewControllerDelegate, UITableViewDataSource, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *story1;
-@property (weak, nonatomic) IBOutlet UIImageView *story2;
-@property (weak, nonatomic) IBOutlet UIImageView *story3;
-@property (weak, nonatomic) IBOutlet UIImageView *story4;
+@property (weak, nonatomic) IBOutlet UIImageView *story1; //story (billie)
+@property (weak, nonatomic) IBOutlet UIImageView *story2; //story (nicki)
+@property (weak, nonatomic) IBOutlet UIImageView *story3; //story (juice)
+@property (weak, nonatomic) IBOutlet UIImageView *story4; //story (olivia)
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic, strong) NSMutableArray *arrayOfPosts;
-@property (weak, nonatomic) IBOutlet UIImageView *story5;
+@property (nonatomic, strong) NSMutableArray *arrayOfPosts; //stores the posts
+@property (weak, nonatomic) IBOutlet UIImageView *story5; //story (tee)
 
+//for infinite scrolling
 @property (assign, nonatomic) BOOL dataDoneLoading;
  
 @end
@@ -40,6 +41,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //set the stories so user can click on them
     self.story1.userInteractionEnabled =YES;
     self.story1.layer.cornerRadius = 30;
     [self.story1.layer setBorderColor: [[UIColor orangeColor] CGColor]];
@@ -87,7 +89,7 @@
     
      
     
-    
+    //timer for auto update for table view (can toggle)
   //[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(refresh) userInfo:nil repeats:true];
     
     
@@ -95,6 +97,7 @@
     
 }
 
+//how many rows
 - (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath{
     if( !self.dataDoneLoading && indexPath.row + 1 == [self.arrayOfPosts count]){
         [self getData:(int)[self.arrayOfPosts count] + 20];
@@ -102,6 +105,7 @@
  
 }
 
+//retrieves the parse data for posts
 - (void)getData: (int) postLimit {
  
     // construct PFQuery
@@ -124,7 +128,7 @@
     }]; 
 }
 
-
+//refreshes the tableview content
 - (void)refresh {
     // construct PFQuery
     PFQuery *postQuery = [Post query];
@@ -199,8 +203,6 @@
  // Updates the tableView with the new data
  // Hides the RefreshControl
 - (void)beginRefresh:(UIRefreshControl *)refreshControl {
-
-    // Parse query
     
     // Reload the tableView now that there is new data
     if(self.arrayOfPosts.count < 20) {
@@ -217,14 +219,14 @@
 
 
 
-
+//when user clicks on compose
 - (IBAction)didTapCompose:(id)sender {
     [self performSegueWithIdentifier:@"composeSegue" sender:self];
 } 
 
 
-//when user clicks on Tweet after composing a tweet.
-//adds the new tweet onto the tweet array (displays at the top of timeline)
+//when user clicks on post after composing a post.
+//adds the new tweet onto the post array (displays at the top of timeline)
 - (void)didPost {
     // Reload the tableView now that there is new data
     [self getData:(int) self.arrayOfPosts.count];

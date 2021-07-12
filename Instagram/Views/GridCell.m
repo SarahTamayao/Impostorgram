@@ -19,7 +19,7 @@
     
 } 
 
-
+//set up 
 - (void)setPost:(Post *)post {
     _post = post;
     self.imageView.file = self.post.image;

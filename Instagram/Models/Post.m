@@ -20,6 +20,7 @@
     return @"Post";
 }
 
+//post user profile image they selected to parse backend
 + (void) postUserImage: ( UIImage * _Nullable )image withCaption: ( NSString * _Nullable )caption withCompletion: (PFBooleanResultBlock  _Nullable)completion {
     
     Post *newPost = [Post new];
@@ -32,7 +33,7 @@
     [newPost saveInBackgroundWithBlock: completion];
 }
 
-
+//get the pffile from an uimage 
 + (PFFileObject *)getPFFileFromImage: (UIImage * _Nullable)image {
  
     // check if image is not nil
